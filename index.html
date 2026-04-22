@@ -1550,30 +1550,30 @@ body {
   <div class="container">
     <div class="section__label">02</div>
     <h2 class="section__title">Logo System</h2>
-    <p class="section__desc">The Privé logo is traced from the original brand mark using VTracer — outlined letterforms with no font dependency. The primary mark is a navy circle (#192E49) with PRIVÉ centered in white. A standalone wordmark (white letterforms on transparent background) is available for dark-background use. Three SVG asset files live in <code>assets/</code>.</p>
+    <p class="section__desc">Two-tier system: the <strong>circle mark</strong> (navy circle + white PRIVÉ) is for contained icons — favicons, social avatars, standalone marks. The <strong>letters-only wordmark</strong> (white letterforms, transparent background) is the primary building block for everything else — headers, logos on backgrounds, wordmarks at any size. On dark or colored backgrounds the white letters render naturally; on white backgrounds, use CSS <code>filter:invert(1)</code> or inline SVG with <code>fill="#192E49"</code>. Three SVG asset files live in <code>assets/</code>.</p>
 
     <div class="subsection">
       <h3 class="subsection__title">Logo on backgrounds</h3>
       <div class="logo-showcase">
         <div class="logo-showcase__bg logo-showcase__bg--white">
-          <img src="assets/logo-I-centered-v4.svg" alt="Privé circle mark on white" width="120" height="120">
+          <img src="assets/logo-letters-v4.svg" alt="Privé wordmark on white" width="200" height="200" style="filter:invert(1)">
         </div>
         <div class="logo-showcase__bg logo-showcase__bg--navy">
-          <img src="assets/logo-I-centered-v4.svg" alt="Privé circle mark on navy" width="120" height="120">
+          <img src="assets/logo-letters-v4.svg" alt="Privé wordmark on navy" width="200" height="200">
         </div>
         <div class="logo-showcase__bg logo-showcase__bg--pumpkin">
-          <img src="assets/logo-I-centered-v4.svg" alt="Privé circle mark on pumpkin" width="120" height="120">
+          <img src="assets/logo-letters-v4.svg" alt="Privé wordmark on pumpkin" width="200" height="200">
         </div>
       </div>
     </div>
 
     <div class="subsection">
       <h3 class="subsection__title">Circle mark &amp; wordmark</h3>
-      <div style="display:flex;gap:48px;align-items:center;flex-wrap:wrap;margin-bottom:32px">
-        <!-- Circle mark — navy circle with white PRIVÉ -->
+      <div style="display:flex;gap:48px;align-items:center;flex-wrap:wrap;margin-bottom:32px;background:#192E49;border-radius:8px;padding:32px">
+        <!-- Circle mark — contained icon use -->
         <img src="assets/logo-I-centered-v4.svg" alt="Privé circle mark" width="80" height="80">
-        <!-- Horizontal wordmark -->
-        <img src="assets/logo-letters-v4.svg" alt="Privé wordmark" width="200" height="94" style="background:#192E49;border-radius:4px;padding:8px">
+        <!-- Letters-only wordmark — general-purpose use -->
+        <img src="assets/logo-letters-v4.svg" alt="Privé wordmark" width="200" height="200">
       </div>
     </div>
 
@@ -1615,21 +1615,25 @@ body {
       <h3 class="subsection__title">SVG assets</h3>
       <div class="code-section">
         <div class="code-section__header">
-          <span class="code-section__title">Circle mark (primary) — assets/logo-I-centered-v4.svg</span>
+          <span class="code-section__title">Circle mark — favicon, social, standalone · assets/logo-I-centered-v4.svg</span>
           <button class="copy-btn" onclick="copyCode(this)">Copy</button>
         </div>
         <div class="code-block" id="logo-svg-code">&lt;img src="assets/logo-I-centered-v4.svg" alt="Privé" width="120" height="120"&gt;</div>
       </div>
       <div class="code-section">
         <div class="code-section__header">
-          <span class="code-section__title">Wordmark (white letterforms) — assets/logo-letters-v4.svg</span>
+          <span class="code-section__title">Wordmark (letters-only) — headers, backgrounds, general use · assets/logo-letters-v4.svg</span>
           <button class="copy-btn" onclick="copyCode(this)">Copy</button>
         </div>
-        <div class="code-block">&lt;img src="assets/logo-letters-v4.svg" alt="Privé" width="200" height="200"&gt;</div>
+        <div class="code-block">&lt;!-- On dark/colored backgrounds — white letters render naturally --&gt;
+&lt;img src="assets/logo-letters-v4.svg" alt="Privé" width="200" height="200"&gt;
+
+&lt;!-- On white backgrounds — invert to get dark letters --&gt;
+&lt;img src="assets/logo-letters-v4.svg" alt="Privé" width="200" height="200" style="filter:invert(1)"&gt;</div>
       </div>
       <div class="code-section">
         <div class="code-section__header">
-          <span class="code-section__title">Circle mark variant — assets/logo-circle-v4.svg</span>
+          <span class="code-section__title">Circle mark (rounded variant) — assets/logo-circle-v4.svg</span>
           <button class="copy-btn" onclick="copyCode(this)">Copy</button>
         </div>
         <div class="code-block">&lt;img src="assets/logo-circle-v4.svg" alt="Privé" width="120" height="120"&gt;</div>
