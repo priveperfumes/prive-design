@@ -282,6 +282,7 @@
     .banner .subtext {
       font-family: 'Barlow', sans-serif;
       font-weight: 300;
+      letter-spacing: 0.04em;
     }
 
     .banner .cta-bar {
@@ -310,8 +311,8 @@
       font-family: 'Barlow', sans-serif;
       font-style: italic;
       font-weight: 300;
-      font-size: clamp(14px, 1.2vw, 20px);
-      color: rgba(255,255,255,0.7);
+      font-size: clamp(16px, 1.4vw, 24px);
+      color: rgba(255,255,255,0.75);
       letter-spacing: 0.05em;
     }
 
@@ -367,7 +368,7 @@
     }
 
     .banner--nuevos .left .subtext {
-      font-size: clamp(12px, 1vw, 18px);
+      font-size: clamp(14px, 1.2vw, 22px);
       color: var(--muted);
     }
 
@@ -432,7 +433,7 @@
     }
 
     .banner--estuches .subtext {
-      font-size: clamp(12px, 1vw, 18px);
+      font-size: clamp(14px, 1.2vw, 22px);
       color: var(--muted);
       margin-bottom: 32px;
     }
@@ -576,7 +577,7 @@
     .banner--genero .panel .sub-label {
       font-family: 'Barlow', sans-serif;
       font-weight: 300;
-      font-size: clamp(10px, 0.8vw, 14px);
+      font-size: clamp(12px, 1vw, 16px);
       letter-spacing: 0.15em;
       text-transform: uppercase;
       margin-top: 12px;
@@ -627,7 +628,7 @@
     }
 
     .banner--vendido .subtext {
-      font-size: clamp(12px, 1vw, 18px);
+      font-size: clamp(14px, 1.2vw, 22px);
       color: var(--muted);
     }
 
@@ -655,7 +656,7 @@
     }
 
     .banner--envio .subtext {
-      font-size: clamp(12px, 1.1vw, 20px);
+      font-size: clamp(14px, 1.3vw, 24px);
       color: var(--cream);
       opacity: 0.7;
     }
@@ -725,9 +726,9 @@
     }
 
     .banner--exclusivos .subtext {
-      font-size: clamp(12px, 1vw, 17px);
+      font-size: clamp(14px, 1.2vw, 20px);
       color: var(--cream);
-      opacity: 0.5;
+      opacity: 0.65;
       position: relative;
       z-index: 1;
     }
@@ -792,6 +793,189 @@
       padding: 2px 6px;
       font-size: 12px;
     }
+
+    /* ═══════════════════════════════════════
+       BANNER 9: DÍA DE LA MADRE
+       ═══════════════════════════════════════ */
+    .banner--madre {
+      background: linear-gradient(160deg, #FAF7F3 0%, #F5EDE4 50%, #EDE3D5 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .banner--madre .floral-line {
+      position: absolute;
+      left: 8%;
+      right: 8%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #B8956A, transparent);
+      opacity: 0.3;
+    }
+    .banner--madre .floral-line--top { top: 15%; }
+    .banner--madre .floral-line--bottom { bottom: 15%; }
+    .banner--madre .heading {
+      font-size: clamp(28px, 4vw, 72px);
+      font-weight: 400;
+      color: #8B6F4E;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .banner--madre .gold-rule {
+      width: 60px;
+      height: 1px;
+      background: #B8956A;
+      margin: 20px 0 24px;
+      opacity: 0.6;
+    }
+    .banner--madre .subtext {
+      font-size: clamp(14px, 1.2vw, 22px);
+      color: #6B5A45;
+      letter-spacing: 0.04em;
+    }
+    .banner--madre .cta-bar {
+      margin-top: 32px;
+      padding: 14px 48px;
+      background: #B8956A;
+      color: #FFFFFF;
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .banner--madre .cta-bar:hover {
+      background: #9A7D55;
+    }
+
+    /* ═══════════════════════════════════════
+       BANNER 10: SAN VALENTÍN
+       ═══════════════════════════════════════ */
+    .banner--valentin {
+      background: linear-gradient(180deg, #0F1D30 0%, #192E49 60%, #1A3254 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .banner--valentin .heart-motif {
+      position: absolute;
+      top: 12%;
+      right: 12%;
+      width: 80px;
+      height: 80px;
+      opacity: 0.06;
+    }
+    .banner--valentin .heart-motif::before,
+    .banner--valentin .heart-motif::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 40px;
+      height: 64px;
+      border-radius: 40px 40px 0 0;
+      background: #E87722;
+    }
+    .banner--valentin .heart-motif::before {
+      left: 40px;
+      transform: rotate(-45deg);
+      transform-origin: 0 100%;
+    }
+    .banner--valentin .heart-motif::after {
+      left: 0;
+      transform: rotate(45deg);
+      transform-origin: 100% 100%;
+    }
+    .banner--valentin .heading {
+      font-size: clamp(28px, 4.5vw, 80px);
+      font-weight: 500;
+      color: #FFFFFF;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    .banner--valentin .accent-rule {
+      width: 80px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #E87722, transparent);
+      margin: 24px 0;
+    }
+    .banner--valentin .subtext {
+      font-size: clamp(14px, 1.2vw, 22px);
+      color: rgba(245,241,236,0.65);
+      letter-spacing: 0.04em;
+    }
+
+    /* ═══════════════════════════════════════
+       BANNER 11: NAVIDAD
+       ═══════════════════════════════════════ */
+    .banner--navidad {
+      background: linear-gradient(135deg, #0B1520 0%, #142333 40%, #192E49 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .banner--navidad .sparkle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #B8956A;
+      border-radius: 50%;
+      opacity: 0;
+      animation: sparkle-pulse 3s infinite;
+    }
+    .banner--navidad .sparkle--1 { top: 20%; left: 15%; animation-delay: 0s; }
+    .banner--navidad .sparkle--2 { top: 30%; right: 20%; animation-delay: 0.8s; }
+    .banner--navidad .sparkle--3 { bottom: 25%; left: 25%; animation-delay: 1.6s; }
+    .banner--navidad .sparkle--4 { bottom: 20%; right: 15%; animation-delay: 2.2s; }
+    @keyframes sparkle-pulse {
+      0%, 100% { opacity: 0; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(2); }
+    }
+    .banner--navidad .heading {
+      font-size: clamp(32px, 5vw, 88px);
+      font-weight: 300;
+      color: #B8956A;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+    .banner--navidad .gold-rule {
+      width: 60px;
+      height: 1px;
+      background: #B8956A;
+      opacity: 0.4;
+      margin: 20px 0 24px;
+    }
+    .banner--navidad .subtext {
+      font-size: clamp(14px, 1.2vw, 22px);
+      color: rgba(245,241,236,0.6);
+      letter-spacing: 0.04em;
+    }
+    .banner--navidad .cta-bar {
+      margin-top: 32px;
+      padding: 14px 48px;
+      border: 1px solid #B8956A;
+      background: transparent;\      color: #B8956A;
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .banner--navidad .cta-bar:hover {
+      background: #B8956A;
+      color: #FFFFFF;
+    }
   </style>
 </head>
 <body>
@@ -829,6 +1013,9 @@
     <a href="#banner-6">06 Más Vendido</a>
     <a href="#banner-7">07 Envío Gratis</a>
     <a href="#banner-8">08 Exclusivos</a>
+    <a href="#banner-9" style="color: var(--gold);">09 Madre</a>
+    <a href="#banner-10" style="color: var(--gold);">10 Valentín</a>
+    <a href="#banner-11" style="color: var(--gold);">11 Navidad</a>
   </div>
 </nav>
 
@@ -868,8 +1055,8 @@
         <line x1="90" y1="5" x2="96" y2="-1" stroke="#E87722" stroke-width="1" stroke-linecap="square"/>
       </svg>
       <div class="hero-accent-line"></div>
-      <p class="hero-tagline">Fragancias auténticas. Envíos a todo Honduras.</p>
-      <p class="hero-sub" style="margin-top: 24px;">Luxury Perfumes</p>
+      <p class="hero-tagline">Fragancias que definen quien eres.</p>
+      <p class="hero-sub" style="margin-top: 24px;">Luxury Perfumes · Honduras</p>
       <div class="hero-stripe"></div>
     </div>
   </div>
@@ -888,7 +1075,7 @@
         <line x1="90" y1="5" x2="96" y2="-1" stroke="#E87722" stroke-width="1.3" stroke-linecap="square"/>
       </svg>
       <div class="hero-accent-line"></div>
-      <p class="hero-tagline" style="font-size: 11px;">Fragancias auténticas. Envíos a todo Honduras.</p>
+      <p class="hero-tagline" style="font-size: 11px;">Fragancias que definen quien eres.</p>
       <div class="hero-stripe"></div>
     </div>
   </div>
@@ -945,8 +1132,8 @@
      ═══════════════════════════════════════ -->
 <section class="banner-section" id="banner-3">
   <div class="banner-label">Banner 03</div>
-  <h2 class="banner-title">Estuches y Sets</h2>
-  <p class="banner-desc">Promoción de sets de regalo. Fondo crema con CTA naranja en la parte inferior.</p>
+  <h2 class="banner-title">Colección de Regalos</h2>
+  <p class="banner-desc">Promoción de regalos premium. Fondo crema con CTA naranja en la parte inferior.</p>
 
   <div class="banner-frame">
     <div class="banner banner--estuches" data-banner-id="3">
@@ -960,8 +1147,8 @@
           <path d="M28 14 C28 14 36 6 40 10 C44 14 36 14 28 14" stroke="#E87722" stroke-width="1.5" fill="none"/>
         </svg>
       </div>
-      <p class="heading">Estuches y Sets</p>
-      <p class="subtext">El regalo perfecto para cada ocasión.</p>
+      <p class="heading">Colección de Regalos</p>
+      <p class="subtext">El detalle que siempre se recuerda.</p>
       <div class="cta-bar">Ver Colección</div>
     </div>
   </div>
@@ -978,8 +1165,8 @@
           <path d="M28 14 C28 14 36 6 40 10 C44 14 36 14 28 14" stroke="#E87722" stroke-width="2" fill="none"/>
         </svg>
       </div>
-      <p class="heading" style="font-size: 18px;">Estuches y Sets</p>
-      <p class="subtext" style="font-size: 10px;">El regalo perfecto para cada ocasión.</p>
+      <p class="heading" style="font-size: 18px;">Colección de Regalos</p>
+      <p class="subtext" style="font-size: 10px;">El detalle que siempre se recuerda.</p>
       <div class="cta-bar" style="height: 36px; font-size: 9px;">Ver Colección</div>
     </div>
   </div>
@@ -1123,7 +1310,7 @@
     <div class="banner banner--envio" data-banner-id="7">
       <div class="text-block">
         <p class="heading">Envío Gratis</p>
-        <p class="subtext">En compras mayores a L. 800</p>
+        <p class="subtext">En compras mayores a L. 800 · Todo Honduras</p>
       </div>
       <div class="icon-block">
         <svg width="140" height="100" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Ícono de entrega">
@@ -1147,7 +1334,7 @@
     <div class="banner banner--envio" style="gap: 16px; padding: 0 16px;">
       <div class="text-block">
         <p class="heading" style="font-size: 22px;">Envío Gratis</p>
-        <p class="subtext" style="font-size: 10px;">En compras mayores a L. 800</p>
+        <p class="subtext" style="font-size: 10px;">En compras mayores a L. 800 · Todo Honduras</p>
       </div>
       <div class="icon-block">
         <svg width="60" height="44" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1207,11 +1394,131 @@
   </div>
 </section>
 
+
+<!-- ═══════════════════════════════════════
+     SEASONAL BANNERS
+     ═══════════════════════════════════════ -->
+
+<div class="divider"><hr></div>
+
+<div style="max-width:1200px;margin:40px auto;padding:0 24px;text-align:center">
+  <div class="banner-label" style="color:var(--pumpkin);margin-bottom:8px">Temporada</div>
+  <h2 style="font-family:'Jost',sans-serif;font-size:28px;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy)">Banners de Temporada</h2>
+  <p style="font-size:14px;color:var(--muted);margin-top:8px">Banners predefinidos para fechas clave. Listos para activar.</p>
+</div>
+
+<!-- ═══════════════════════════════════════
+     BANNER 9: DÍA DE LA MADRE
+     ═══════════════════════════════════════ -->
+<section class="banner-section" id="banner-9">
+  <div class="banner-label">Temporada 01</div>
+  <h2 class="banner-title">Día de la Madre</h2>
+  <p class="banner-desc">Mayo. Elegancia floral con tipografía serif en gold. El banner más emocional del año.</p>
+
+  <div class="banner-frame">
+    <div class="banner banner--madre" data-banner-id="9">
+      <div class="floral-line floral-line--top"></div>
+      <div class="floral-line floral-line--bottom"></div>
+      <p class="heading">Día de la Madre</p>
+      <div class="gold-rule"></div>
+      <p class="subtext">Porque ella merece lo extraordinario.</p>
+      <div class="cta-bar">Ver Colección</div>
+    </div>
+  </div>
+
+  <div class="mobile-preview-label">Vista móvil (375px)</div>
+  <div class="mobile-frame">
+    <div class="banner banner--madre">
+      <div class="floral-line floral-line--top"></div>
+      <p class="heading" style="font-size: 22px;">Día de la Madre</p>
+      <div class="gold-rule"></div>
+      <p class="subtext" style="font-size: 10px;">Porque ella merece lo extraordinario.</p>
+    </div>
+  </div>
+
+  <div class="banner-actions">
+    <button class="btn-copy" onclick="copyCss(9)">Copiar CSS</button>
+    <button class="btn-download" onclick="downloadPng(9)">Download PNG</button>
+  </div>
+</section>
+
+<div class="divider"><hr></div>
+
+<!-- ═══════════════════════════════════════
+     BANNER 10: SAN VALENTÍN
+     ═══════════════════════════════════════ -->
+<section class="banner-section" id="banner-10">
+  <div class="banner-label">Temporada 02</div>
+  <h2 class="banner-title">San Valentín</h2>
+  <p class="banner-desc">Febrero. Navy profundo con acentos cálidos. Romántico sin ser cursi.</p>
+
+  <div class="banner-frame">
+    <div class="banner banner--valentin" data-banner-id="10">
+      <div class="heart-motif"></div>
+      <p class="heading">San Valentín</p>
+      <div class="accent-rule"></div>
+      <p class="subtext">Fragancias que dicen lo que las palabras no pueden.</p>
+    </div>
+  </div>
+
+  <div class="mobile-preview-label">Vista móvil (375px)</div>
+  <div class="mobile-frame">
+    <div class="banner banner--valentin">
+      <p class="heading" style="font-size: 22px;">San Valentín</p>
+      <div class="accent-rule"></div>
+      <p class="subtext" style="font-size: 10px;">Fragancias que dicen lo que las palabras no pueden.</p>
+    </div>
+  </div>
+
+  <div class="banner-actions">
+    <button class="btn-copy" onclick="copyCss(10)">Copiar CSS</button>
+    <button class="btn-download" onclick="downloadPng(10)">Download PNG</button>
+  </div>
+</section>
+
+<div class="divider"><hr></div>
+
+<!-- ═══════════════════════════════════════
+     BANNER 11: NAVIDAD
+     ═══════════════════════════════════════ -->
+<section class="banner-section" id="banner-11">
+  <div class="banner-label">Temporada 03</div>
+  <h2 class="banner-title">Navidad</h2>
+  <p class="banner-desc">Diciembre. Navy oscuro con gold. Lujo festivo, no navideño genérico.</p>
+
+  <div class="banner-frame">
+    <div class="banner banner--navidad" data-banner-id="11">
+      <div class="sparkle sparkle--1"></div>
+      <div class="sparkle sparkle--2"></div>
+      <div class="sparkle sparkle--3"></div>
+      <div class="sparkle sparkle--4"></div>
+      <p class="heading">Navidad</p>
+      <div class="gold-rule"></div>
+      <p class="subtext">Regalos que se recuerdan por siempre.</p>
+      <div class="cta-bar">Ver Regalos</div>
+    </div>
+  </div>
+
+  <div class="mobile-preview-label">Vista móvil (375px)</div>
+  <div class="mobile-frame">
+    <div class="banner banner--navidad">
+      <p class="heading" style="font-size: 22px;">Navidad</p>
+      <div class="gold-rule"></div>
+      <p class="subtext" style="font-size: 10px;">Regalos que se recuerdan por siempre.</p>
+    </div>
+  </div>
+
+  <div class="banner-actions">
+    <button class="btn-copy" onclick="copyCss(11)">Copiar CSS</button>
+    <button class="btn-download" onclick="downloadPng(11)">Download PNG</button>
+  </div>
+</section>
+
 <!-- ═══════════════════════════════════════
      FOOTER
      ═══════════════════════════════════════ -->
 <footer class="page-footer">
-  <p>Privé Perfumes — Sistema de Banners v1.0</p>
+  <p>Privé Perfumes — Sistema de Banners v1.1</p>
   <p style="margin-top: 4px;"><a href="index.html">← Volver al Design System</a></p>
 </footer>
 
@@ -1472,8 +1779,115 @@ const bannerCss = {
   font-weight: 300;
   color: #F5F1EC;
   opacity: 0.5;
+}`,
+
+  9: `/* Banner 9: Día de la Madre */
+.banner--madre {
+  width: 1920px;
+  height: 600px;
+  background: linear-gradient(160deg, #FAF7F3 0%, #F5EDE4 50%, #EDE3D5 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.banner--madre .heading {
+  font-family: 'Jost', sans-serif;
+  font-size: 72px;
+  font-weight: 400;
+  color: #8B6F4E;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.banner--madre .subtext {
+  font-family: 'Barlow', sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+  color: #6B5A45;
+  letter-spacing: 0.04em;
+}
+.banner--madre .cta-bar {
+  margin-top: 32px;
+  padding: 14px 48px;
+  background: #B8956A;
+  color: #FFFFFF;
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}`,
+
+  10: `/* Banner 10: San Valentín */
+.banner--valentin {
+  width: 1920px;
+  height: 600px;
+  background: linear-gradient(180deg, #0F1D30 0%, #192E49 60%, #1A3254 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.banner--valentin .heading {
+  font-family: 'Jost', sans-serif;
+  font-size: 80px;
+  font-weight: 500;
+  color: #FFFFFF;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.banner--valentin .subtext {
+  font-family: 'Barlow', sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+  color: rgba(245,241,236,0.65);
+  letter-spacing: 0.04em;
+}`,
+
+  11: `/* Banner 11: Navidad */
+.banner--navidad {
+  width: 1920px;
+  height: 600px;
+  background: linear-gradient(135deg, #0B1520 0%, #142333 40%, #192E49 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.banner--navidad .heading {
+  font-family: 'Jost', sans-serif;
+  font-size: 88px;
+  font-weight: 300;
+  color: #B8956A;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+.banner--navidad .subtext {
+  font-family: 'Barlow', sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+  color: rgba(245,241,236,0.6);
+  letter-spacing: 0.04em;
+}
+.banner--navidad .cta-bar {
+  margin-top: 32px;
+  padding: 14px 48px;
+  border: 1px solid #B8956A;
+  background: transparent;
+  color: #B8956A;
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }`
-};
+}
 
 function copyCss(id) {
   const css = bannerCss[id];
