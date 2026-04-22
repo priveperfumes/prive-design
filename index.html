@@ -241,17 +241,12 @@ body {
   background: var(--background);
 }
 .hero__logo {
-  font-family: var(--font-heading);
-  font-size: 5rem;
-  font-weight: 300;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-heading);
-  line-height: 1;
+  line-height: 0;
   margin-bottom: 16px;
 }
-.hero__logo span {
-  color: var(--accent);
+.hero__logo svg {
+  width: 320px;
+  height: auto;
 }
 .hero__tagline {
   font-family: var(--font-body);
@@ -276,7 +271,7 @@ body {
 
 @media (max-width: 600px) {
   .hero { padding: 64px 0 48px; }
-  .hero__logo { font-size: 3rem; }
+  .hero__logo svg { width: 200px; }
 }
 
 /* ═══════════════════════════════════════
@@ -1535,7 +1530,18 @@ body {
      ═══════════════════════════════════════ -->
 <section class="hero" id="hero">
   <div class="container">
-    <div class="hero__logo">PRIV<span>É</span></div>
+    <div class="hero__logo">
+      <svg viewBox="-1 -2 102 48" xmlns="http://www.w3.org/2000/svg" aria-label="Privé">
+        <g fill="none" stroke="#192E49" stroke-width="1.3" stroke-linecap="square" stroke-linejoin="miter">
+          <path d="M2 44 V8 H10 A7 7 0 0 1 10 22 H2"/>
+          <path d="M21 44 V8 H29 A7 7 0 0 1 29 22 H21 M29 22 L37 44"/>
+          <path d="M42 8 V44"/>
+          <path d="M48 8 L63 44 L78 8"/>
+          <path d="M84 44 V8 H97 M84 26 H94 M84 44 H97"/>
+        </g>
+        <line x1="90" y1="5" x2="96" y2="-1" stroke="#E87722" stroke-width="1.3" stroke-linecap="square"/>
+      </svg>
+    </div>
     <p class="hero__tagline">Friendly exclusive. Confident, not arrogant. Warm, not casual.</p>
     <div class="hero__meta">
       <span>v2.1.0</span>
@@ -1552,56 +1558,136 @@ body {
   <div class="container">
     <div class="section__label">02</div>
     <h2 class="section__title">Logo System</h2>
-    <p class="section__desc">The Privé wordmark is set in Jost uppercase with tight letter-spacing. The accented É is the only decorative element — a nod to the brand's French-inspired name with Latin American warmth.</p>
+    <p class="section__desc">The Privé wordmark is a geometric, ultra-light sans-serif constructed from hairline-weight paths. Each letter is hand-drawn as SVG &lt;path&gt; elements — no font dependency. The accented É carries its accent in pumpkin orange, the sole decorative element. Two variants: a horizontal wordmark and a navy circle mark.</p>
 
     <div class="subsection">
       <h3 class="subsection__title">Logo on backgrounds</h3>
       <div class="logo-showcase">
         <div class="logo-showcase__bg logo-showcase__bg--white">
-          <svg viewBox="0 0 320 60" width="200" height="38" xmlns="http://www.w3.org/2000/svg" aria-label="Privé logo on white">
-            <text x="0" y="48" font-family="Jost, sans-serif" font-size="52" font-weight="400" letter-spacing="6" fill="#192E49" text-rendering="geometricPrecision">PRIVÉ</text>
+          <svg viewBox="-1 -2 102 48" width="200" height="94" xmlns="http://www.w3.org/2000/svg" aria-label="Privé wordmark on white">
+            <g fill="none" stroke="#192E49" stroke-width="1.3" stroke-linecap="square" stroke-linejoin="miter">
+              <path d="M2 44 V8 H10 A7 7 0 0 1 10 22 H2"/>
+              <path d="M21 44 V8 H29 A7 7 0 0 1 29 22 H21 M29 22 L37 44"/>
+              <path d="M42 8 V44"/>
+              <path d="M48 8 L63 44 L78 8"/>
+              <path d="M84 44 V8 H97 M84 26 H94 M84 44 H97"/>
+            </g>
+            <line x1="90" y1="5" x2="96" y2="-1" stroke="#E87722" stroke-width="1.3" stroke-linecap="square"/>
           </svg>
         </div>
         <div class="logo-showcase__bg logo-showcase__bg--navy">
-          <svg viewBox="0 0 320 60" width="200" height="38" xmlns="http://www.w3.org/2000/svg" aria-label="Privé logo on navy">
-            <text x="0" y="48" font-family="Jost, sans-serif" font-size="52" font-weight="400" letter-spacing="6" fill="#FFFFFF" text-rendering="geometricPrecision">PRIVÉ</text>
+          <svg viewBox="-1 -2 102 48" width="200" height="94" xmlns="http://www.w3.org/2000/svg" aria-label="Privé wordmark on navy">
+            <g fill="none" stroke="#FFFFFF" stroke-width="1.3" stroke-linecap="square" stroke-linejoin="miter">
+              <path d="M2 44 V8 H10 A7 7 0 0 1 10 22 H2"/>
+              <path d="M21 44 V8 H29 A7 7 0 0 1 29 22 H21 M29 22 L37 44"/>
+              <path d="M42 8 V44"/>
+              <path d="M48 8 L63 44 L78 8"/>
+              <path d="M84 44 V8 H97 M84 26 H94 M84 44 H97"/>
+            </g>
+            <line x1="90" y1="5" x2="96" y2="-1" stroke="#E87722" stroke-width="1.3" stroke-linecap="square"/>
           </svg>
         </div>
         <div class="logo-showcase__bg logo-showcase__bg--pumpkin">
-          <svg viewBox="0 0 320 60" width="200" height="38" xmlns="http://www.w3.org/2000/svg" aria-label="Privé logo on pumpkin">
-            <text x="0" y="48" font-family="Jost, sans-serif" font-size="52" font-weight="400" letter-spacing="6" fill="#FFFFFF" text-rendering="geometricPrecision">PRIVÉ</text>
+          <svg viewBox="-1 -2 102 48" width="200" height="94" xmlns="http://www.w3.org/2000/svg" aria-label="Privé wordmark on pumpkin">
+            <g fill="none" stroke="#FFFFFF" stroke-width="1.3" stroke-linecap="square" stroke-linejoin="miter">
+              <path d="M2 44 V8 H10 A7 7 0 0 1 10 22 H2"/>
+              <path d="M21 44 V8 H29 A7 7 0 0 1 29 22 H21 M29 22 L37 44"/>
+              <path d="M42 8 V44"/>
+              <path d="M48 8 L63 44 L78 8"/>
+              <path d="M84 44 V8 H97 M84 26 H94 M84 44 H97"/>
+            </g>
+            <line x1="90" y1="5" x2="96" y2="-1" stroke="#FFFFFF" stroke-width="1.3" stroke-linecap="square"/>
           </svg>
         </div>
       </div>
     </div>
 
     <div class="subsection">
-      <h3 class="subsection__title">Logo with mark</h3>
+      <h3 class="subsection__title">Circle mark &amp; wordmark</h3>
       <div style="display:flex;gap:48px;align-items:center;flex-wrap:wrap;margin-bottom:32px">
-        <!-- Logo with geometric P mark -->
-        <svg viewBox="0 0 400 60" width="280" height="42" xmlns="http://www.w3.org/2000/svg" aria-label="Privé logo with geometric mark">
-          <!-- Abstract P mark — sharp angles, perfume bottle silhouette -->
-          <polygon points="0,56 0,4 20,4 20,28 28,28 28,4 20,4 28,0 32,0 32,32 20,32 20,56" fill="#192E49"/>
-          <rect x="6" y="8" width="10" height="2" fill="#E87722"/>
-          <text x="48" y="48" font-family="Jost, sans-serif" font-size="52" font-weight="400" letter-spacing="6" fill="#192E49" text-rendering="geometricPrecision">PRIVÉ</text>
+        <!-- Circle mark — navy circle with white PRIVÉ -->
+        <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg" aria-label="Privé circle mark">
+          <circle cx="50" cy="50" r="48" fill="#192E49"/>
+          <g transform="translate(10,29) scale(0.82)" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter">
+            <path d="M2 44 V8 H10 A7 7 0 0 1 10 22 H2"/>
+            <path d="M21 44 V8 H29 A7 7 0 0 1 29 22 H21 M29 22 L37 44"/>
+            <path d="M42 8 V44"/>
+            <path d="M48 8 L63 44 L78 8"/>
+            <path d="M84 44 V8 H97 M84 26 H94 M84 44 H97"/>
+          </g>
+          <line transform="translate(10,29) scale(0.82)" x1="90" y1="5" x2="96" y2="-1" stroke="#E87722" stroke-width="1.6" stroke-linecap="square"/>
+        </svg>
+        <!-- Horizontal wordmark -->
+        <svg viewBox="-1 -2 102 48" width="200" height="94" xmlns="http://www.w3.org/2000/svg" aria-label="Privé wordmark">
+          <g fill="none" stroke="#192E49" stroke-width="1.3" stroke-linecap="square" stroke-linejoin="miter">
+            <path d="M2 44 V8 H10 A7 7 0 0 1 10 22 H2"/>
+            <path d="M21 44 V8 H29 A7 7 0 0 1 29 22 H21 M29 22 L37 44"/>
+            <path d="M42 8 V44"/>
+            <path d="M48 8 L63 44 L78 8"/>
+            <path d="M84 44 V8 H97 M84 26 H94 M84 44 H97"/>
+          </g>
+          <line x1="90" y1="5" x2="96" y2="-1" stroke="#E87722" stroke-width="1.3" stroke-linecap="square"/>
         </svg>
       </div>
     </div>
 
     <div class="subsection">
-      <h3 class="subsection__title">Logo sizes</h3>
+      <h3 class="subsection__title">Circle mark sizes</h3>
       <div class="logo-sizes">
         <div class="logo-size-item">
-          <svg viewBox="0 0 320 60" width="32" height="6" xmlns="http://www.w3.org/2000/svg"><text x="0" y="48" font-family="Jost, sans-serif" font-size="52" font-weight="500" letter-spacing="6" fill="#192E49">PRIVÉ</text></svg>
+          <svg viewBox="0 0 100 100" width="32" height="32" xmlns="http://www.w3.org/2000/svg" aria-label="Privé circle mark 32px">
+            <circle cx="50" cy="50" r="48" fill="#192E49"/>
+            <g transform="translate(10,29) scale(0.82)" fill="none" stroke="#FFF" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+              <path d="M2 44 V8 H10 A7 7 0 0 1 10 22 H2"/><path d="M21 44 V8 H29 A7 7 0 0 1 29 22 H21 M29 22 L37 44"/><path d="M42 8 V44"/><path d="M48 8 L63 44 L78 8"/><path d="M84 44 V8 H97 M84 26 H94 M84 44 H97"/>
+            </g>
+            <line transform="translate(10,29) scale(0.82)" x1="90" y1="5" x2="96" y2="-1" stroke="#E87722" stroke-width="2" stroke-linecap="square"/>
+          </svg>
           <div class="logo-size-item__label">Favicon · 32px</div>
         </div>
         <div class="logo-size-item">
-          <svg viewBox="0 0 320 60" width="64" height="12" xmlns="http://www.w3.org/2000/svg"><text x="0" y="48" font-family="Jost, sans-serif" font-size="52" font-weight="400" letter-spacing="6" fill="#192E49">PRIVÉ</text></svg>
+          <svg viewBox="0 0 100 100" width="64" height="64" xmlns="http://www.w3.org/2000/svg" aria-label="Privé circle mark 64px">
+            <circle cx="50" cy="50" r="48" fill="#192E49"/>
+            <g transform="translate(10,29) scale(0.82)" fill="none" stroke="#FFF" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter">
+              <path d="M2 44 V8 H10 A7 7 0 0 1 10 22 H2"/><path d="M21 44 V8 H29 A7 7 0 0 1 29 22 H21 M29 22 L37 44"/><path d="M42 8 V44"/><path d="M48 8 L63 44 L78 8"/><path d="M84 44 V8 H97 M84 26 H94 M84 44 H97"/>
+            </g>
+            <line transform="translate(10,29) scale(0.82)" x1="90" y1="5" x2="96" y2="-1" stroke="#E87722" stroke-width="1.6" stroke-linecap="square"/>
+          </svg>
+          <div class="logo-size-item__label">Social · 64px</div>
+        </div>
+        <div class="logo-size-item">
+          <svg viewBox="0 0 100 100" width="120" height="120" xmlns="http://www.w3.org/2000/svg" aria-label="Privé circle mark 120px">
+            <circle cx="50" cy="50" r="48" fill="#192E49"/>
+            <g transform="translate(10,29) scale(0.82)" fill="none" stroke="#FFF" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+              <path d="M2 44 V8 H10 A7 7 0 0 1 10 22 H2"/><path d="M21 44 V8 H29 A7 7 0 0 1 29 22 H21 M29 22 L37 44"/><path d="M42 8 V44"/><path d="M48 8 L63 44 L78 8"/><path d="M84 44 V8 H97 M84 26 H94 M84 44 H97"/>
+            </g>
+            <line transform="translate(10,29) scale(0.82)" x1="90" y1="5" x2="96" y2="-1" stroke="#E87722" stroke-width="1.5" stroke-linecap="square"/>
+          </svg>
+          <div class="logo-size-item__label">Large · 120px</div>
+        </div>
+      </div>
+      <div style="height:32px"></div>
+      <h3 class="subsection__title">Wordmark sizes</h3>
+      <div class="logo-sizes">
+        <div class="logo-size-item">
+          <svg viewBox="-1 -2 102 48" width="64" height="30" xmlns="http://www.w3.org/2000/svg" aria-label="Privé wordmark 64px">
+            <g fill="none" stroke="#192E49" stroke-width="1.3" stroke-linecap="square" stroke-linejoin="miter"><path d="M2 44 V8 H10 A7 7 0 0 1 10 22 H2"/><path d="M21 44 V8 H29 A7 7 0 0 1 29 22 H21 M29 22 L37 44"/><path d="M42 8 V44"/><path d="M48 8 L63 44 L78 8"/><path d="M84 44 V8 H97 M84 26 H94 M84 44 H97"/></g>
+            <line x1="90" y1="5" x2="96" y2="-1" stroke="#E87722" stroke-width="1.3" stroke-linecap="square"/>
+          </svg>
           <div class="logo-size-item__label">Header · 64px</div>
         </div>
         <div class="logo-size-item">
-          <svg viewBox="0 0 320 60" width="200" height="38" xmlns="http://www.w3.org/2000/svg"><text x="0" y="48" font-family="Jost, sans-serif" font-size="52" font-weight="400" letter-spacing="6" fill="#192E49">PRIVÉ</text></svg>
-          <div class="logo-size-item__label">Large · 200px</div>
+          <svg viewBox="-1 -2 102 48" width="160" height="75" xmlns="http://www.w3.org/2000/svg" aria-label="Privé wordmark 160px">
+            <g fill="none" stroke="#192E49" stroke-width="1.3" stroke-linecap="square" stroke-linejoin="miter"><path d="M2 44 V8 H10 A7 7 0 0 1 10 22 H2"/><path d="M21 44 V8 H29 A7 7 0 0 1 29 22 H21 M29 22 L37 44"/><path d="M42 8 V44"/><path d="M48 8 L63 44 L78 8"/><path d="M84 44 V8 H97 M84 26 H94 M84 44 H97"/></g>
+            <line x1="90" y1="5" x2="96" y2="-1" stroke="#E87722" stroke-width="1.3" stroke-linecap="square"/>
+          </svg>
+          <div class="logo-size-item__label">Medium · 160px</div>
+        </div>
+        <div class="logo-size-item">
+          <svg viewBox="-1 -2 102 48" width="280" height="131" xmlns="http://www.w3.org/2000/svg" aria-label="Privé wordmark 280px">
+            <g fill="none" stroke="#192E49" stroke-width="1.3" stroke-linecap="square" stroke-linejoin="miter"><path d="M2 44 V8 H10 A7 7 0 0 1 10 22 H2"/><path d="M21 44 V8 H29 A7 7 0 0 1 29 22 H21 M29 22 L37 44"/><path d="M42 8 V44"/><path d="M48 8 L63 44 L78 8"/><path d="M84 44 V8 H97 M84 26 H94 M84 44 H97"/></g>
+            <line x1="90" y1="5" x2="96" y2="-1" stroke="#E87722" stroke-width="1.3" stroke-linecap="square"/>
+          </svg>
+          <div class="logo-size-item__label">Large · 280px</div>
         </div>
       </div>
     </div>
@@ -1610,30 +1696,59 @@ body {
       <h3 class="subsection__title">SVG code (copy)</h3>
       <div class="code-section">
         <div class="code-section__header">
-          <span class="code-section__title">Logo SVG — Navy on white</span>
+          <span class="code-section__title">Wordmark SVG — Navy on white</span>
           <button class="copy-btn" onclick="copyCode(this)">Copy</button>
         </div>
-        <div class="code-block" id="logo-svg-code">&lt;svg viewBox="0 0 320 60" xmlns="http://www.w3.org/2000/svg"&gt;
-  &lt;text x="0" y="48"
-    font-family="Jost, sans-serif"
-    font-size="52"
-    font-weight="400"
-    letter-spacing="6"
-    fill="#192E49"&gt;PRIVÉ&lt;/text&gt;
+        <div class="code-block" id="logo-svg-code">&lt;svg viewBox="-1 -2 102 48" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;g fill="none" stroke="#192E49" stroke-width="1.3"
+     stroke-linecap="square" stroke-linejoin="miter"&gt;
+    &lt;path d="M2 44 V8 H10 A7 7 0 0 1 10 22 H2"/&gt;
+    &lt;path d="M21 44 V8 H29 A7 7 0 0 1 29 22 H21 M29 22 L37 44"/&gt;
+    &lt;path d="M42 8 V44"/&gt;
+    &lt;path d="M48 8 L63 44 L78 8"/&gt;
+    &lt;path d="M84 44 V8 H97 M84 26 H94 M84 44 H97"/&gt;
+  &lt;/g&gt;
+  &lt;line x1="90" y1="5" x2="96" y2="-1"
+    stroke="#E87722" stroke-width="1.3" stroke-linecap="square"/&gt;
 &lt;/svg&gt;</div>
       </div>
       <div class="code-section">
         <div class="code-section__header">
-          <span class="code-section__title">Logo SVG — White on navy (dark mode)</span>
+          <span class="code-section__title">Wordmark SVG — White on navy (dark mode)</span>
           <button class="copy-btn" onclick="copyCode(this)">Copy</button>
         </div>
-        <div class="code-block">&lt;svg viewBox="0 0 320 60" xmlns="http://www.w3.org/2000/svg"&gt;
-  &lt;text x="0" y="48"
-    font-family="Jost, sans-serif"
-    font-size="52"
-    font-weight="400"
-    letter-spacing="6"
-    fill="#FFFFFF"&gt;PRIVÉ&lt;/text&gt;
+        <div class="code-block">&lt;svg viewBox="-1 -2 102 48" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;g fill="none" stroke="#FFFFFF" stroke-width="1.3"
+     stroke-linecap="square" stroke-linejoin="miter"&gt;
+    &lt;path d="M2 44 V8 H10 A7 7 0 0 1 10 22 H2"/&gt;
+    &lt;path d="M21 44 V8 H29 A7 7 0 0 1 29 22 H21 M29 22 L37 44"/&gt;
+    &lt;path d="M42 8 V44"/&gt;
+    &lt;path d="M48 8 L63 44 L78 8"/&gt;
+    &lt;path d="M84 44 V8 H97 M84 26 H94 M84 44 H97"/&gt;
+  &lt;/g&gt;
+  &lt;line x1="90" y1="5" x2="96" y2="-1"
+    stroke="#E87722" stroke-width="1.3" stroke-linecap="square"/&gt;
+&lt;/svg&gt;</div>
+      </div>
+      <div class="code-section">
+        <div class="code-section__header">
+          <span class="code-section__title">Circle mark SVG — Navy with white text</span>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <div class="code-block">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;circle cx="50" cy="50" r="48" fill="#192E49"/&gt;
+  &lt;g transform="translate(10,29) scale(0.82)"
+     fill="none" stroke="#FFFFFF" stroke-width="1.6"
+     stroke-linecap="square" stroke-linejoin="miter"&gt;
+    &lt;path d="M2 44 V8 H10 A7 7 0 0 1 10 22 H2"/&gt;
+    &lt;path d="M21 44 V8 H29 A7 7 0 0 1 29 22 H21 M29 22 L37 44"/&gt;
+    &lt;path d="M42 8 V44"/&gt;
+    &lt;path d="M48 8 L63 44 L78 8"/&gt;
+    &lt;path d="M84 44 V8 H97 M84 26 H94 M84 44 H97"/&gt;
+  &lt;/g&gt;
+  &lt;line transform="translate(10,29) scale(0.82)"
+    x1="90" y1="5" x2="96" y2="-1"
+    stroke="#E87722" stroke-width="1.6" stroke-linecap="square"/&gt;
 &lt;/svg&gt;</div>
       </div>
     </div>

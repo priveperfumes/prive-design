@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privé Perfumes — Banners para Shopify</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Barlow:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* ═══════════════════════════════════════
+       RESET & BASE
+       ═══════════════════════════════════════ */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy: #192E49;
+      --pumpkin: #E87722;
+      --pumpkin-cta: #C96518;
+      --cream: #F5F1EC;
+      --gold: #B8956A;
+      --text: #2E2E2E;
+      --muted: #6E6E6E;
+      --white: #FFFFFF;
+      --banner-w: 1920px;
+      --banner-h: 600px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: #F0EDE8;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ═══════════════════════════════════════
+       PAGE HEADER
+       ═══════════════════════════════════════ */
+    .page-header {
+      background: var(--navy);
+      color: var(--white);
+      padding: 40px 0 32px;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      color: var(--pumpkin);
+    }
+
+    .page-header p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .page-header .logo-mark {
+      margin-bottom: 24px;
+    }
+
+    /* ═══════════════════════════════════════
+       NAVIGATION
+       ═══════════════════════════════════════ */
+    .banner-nav {
+      background: var(--white);
+      border-bottom: 1px solid #E0DCD7;
+      padding: 0 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .banner-nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      gap: 0;
+    }
+
+    .banner-nav a {
+      display: inline-block;
+      padding: 14px 20px;
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--muted);
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+      flex-shrink: 0;
+    }
+
+    .banner-nav a:hover {
+      color: var(--navy);
+      border-bottom-color: var(--pumpkin);
+    }
+
+    /* ═══════════════════════════════════════
+       BANNER SECTION WRAPPER
+       ═══════════════════════════════════════ */
+    .banner-section {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 24px;
+    }
+
+    .banner-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--pumpkin);
+      margin-bottom: 4px;
+    }
+
+    .banner-title {
+      font-family: 'Jost', sans-serif;
+      font-size: 24px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .banner-desc {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 24px;
+      max-width: 600px;
+    }
+
+    /* Banner container with aspect ratio */
+    .banner-frame {
+      width: 100%;
+      aspect-ratio: 1920 / 600;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+
+    .banner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Mobile preview */
+    .mobile-preview-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 32px 0 12px;
+    }
+
+    .mobile-frame {
+      width: 375px;
+      max-width: 100%;
+      aspect-ratio: 375 / 200;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      border: 1px solid #E0DCD7;
+    }
+
+    .mobile-frame .banner {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Copy CSS button */
+    .banner-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-top: 16px;
+    }
+
+    .btn-copy {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 10px 20px;
+      border: 1px solid var(--navy);
+      background: transparent;
+      color: var(--navy);
+      cursor: pointer;
+      border-radius: 0;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn-copy:hover {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .btn-copy.copied {
+      background: var(--pumpkin);
+      border-color: var(--pumpkin);
+      color: var(--white);
+    }
+
+    .screenshot-note {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* Divider */
+    .divider {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .divider hr {
+      border: none;
+      border-top: 1px solid #E0DCD7;
+    }
+
+    /* ═══════════════════════════════════════
+       SHARED BANNER STYLES
+       ═══════════════════════════════════════ */
+    .banner .heading {
+      font-family: 'Jost', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      line-height: 1.1;
+    }
+
+    .banner .subtext {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+    }
+
+    .banner .cta-bar {
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+    }
+
+    /* ═══════════════════════════════════════
+       BANNER 1: HERO
+       ═══════════════════════════════════════ */
+    .banner--hero {
+      background: var(--navy);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .banner--hero .hero-logo {
+      margin-bottom: 32px;
+    }
+
+    .banner--hero .hero-tagline {
+      font-family: 'Barlow', sans-serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(14px, 1.2vw, 20px);
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.05em;
+    }
+
+    .banner--hero .hero-stripe {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: var(--pumpkin);
+    }
+
+    .banner--hero .hero-accent-line {
+      width: 60px;
+      height: 1px;
+      background: var(--pumpkin);
+      margin: 20px auto 24px;
+    }
+
+    .banner--hero .hero-sub {
+      font-family: 'Jost', sans-serif;
+      font-size: clamp(9px, 0.7vw, 12px);
+      font-weight: 400;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ═══════════════════════════════════════
+       BANNER 2: NUEVOS INGRESOS
+       ═══════════════════════════════════════ */
+    .banner--nuevos {
+      display: flex;
+      background: var(--cream);
+    }
+
+    .banner--nuevos .left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 clamp(24px, 5%, 80px);
+      position: relative;
+      z-index: 2;
+    }
+
+    .banner--nuevos .left .heading {
+      font-size: clamp(28px, 4vw, 72px);
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .banner--nuevos .left .subtext {
+      font-size: clamp(12px, 1vw, 18px);
+      color: var(--muted);
+    }
+
+    .banner--nuevos .right {
+      flex: 1;
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .banner--nuevos .right::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 80%;
+      height: 200%;
+      background: var(--pumpkin);
+      transform: rotate(15deg);
+      opacity: 0.15;
+    }
+
+    .banner--nuevos .right::after {
+      content: '';
+      position: absolute;
+      bottom: 60px;
+      right: 60px;
+      width: 120px;
+      height: 120px;
+      border: 2px solid var(--pumpkin);
+      opacity: 0.4;
+    }
+
+    .banner--nuevos .diagonal-split {
+      position: absolute;
+      top: 0;
+      left: -1px;
+      width: calc(50% + 60px);
+      height: 100%;
+      background: var(--cream);
+      clip-path: polygon(0 0, calc(100% - 60px) 0, 100% 100%, 0 100%);
+      z-index: 1;
+    }
+
+    /* ═══════════════════════════════════════
+       BANNER 3: ESTUCHES Y SETS
+       ═══════════════════════════════════════ */
+    .banner--estuches {
+      background: var(--cream);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .banner--estuches .heading {
+      font-size: clamp(28px, 4vw, 68px);
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .banner--estuches .subtext {
+      font-size: clamp(12px, 1vw, 18px);
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+
+    .banner--estuches .gift-icon {
+      margin-bottom: 28px;
+    }
+
+    .banner--estuches .cta-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 56px;
+      background: var(--pumpkin-cta);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: clamp(11px, 0.8vw, 14px);
+      letter-spacing: 0.3em;
+    }
+
+    /* ═══════════════════════════════════════
+       BANNER 4: OFERTAS ESPECIALES
+       ═══════════════════════════════════════ */
+    .banner--ofertas {
+      background: var(--navy);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .banner--ofertas .pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+      background-image:
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 40px,
+          rgba(255,255,255,0.5) 40px,
+          rgba(255,255,255,0.5) 41px
+        );
+    }
+
+    .banner--ofertas .heading {
+      font-size: clamp(32px, 4.5vw, 80px);
+      font-weight: 500;
+      color: var(--white);
+      position: relative;
+      z-index: 1;
+      margin-bottom: 16px;
+    }
+
+    .banner--ofertas .subtext {
+      font-size: clamp(12px, 1vw, 17px);
+      color: rgba(255,255,255,0.5);
+      position: relative;
+      z-index: 1;
+      margin-bottom: 32px;
+    }
+
+    .banner--ofertas .accent-dots {
+      display: flex;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .banner--ofertas .accent-dots span {
+      width: 6px;
+      height: 6px;
+      background: var(--pumpkin);
+    }
+
+    .banner--ofertas .corner-accent {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border: 2px solid var(--pumpkin);
+      opacity: 0.3;
+    }
+
+    .banner--ofertas .corner-accent--tl {
+      top: 40px;
+      left: 40px;
+      border-right: none;
+      border-bottom: none;
+    }
+
+    .banner--ofertas .corner-accent--br {
+      bottom: 40px;
+      right: 40px;
+      border-left: none;
+      border-top: none;
+    }
+
+    /* ═══════════════════════════════════════
+       BANNER 5: PARA ÉL / PARA ELLA
+       ═══════════════════════════════════════ */
+    .banner--genero {
+      display: flex;
+    }
+
+    .banner--genero .panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .banner--genero .panel--el {
+      background: var(--navy);
+    }
+
+    .banner--genero .panel--ella {
+      background: var(--cream);
+    }
+
+    .banner--genero .panel .heading {
+      font-size: clamp(28px, 4vw, 72px);
+      font-weight: 400;
+      letter-spacing: 0.2em;
+    }
+
+    .banner--genero .panel--el .heading {
+      color: var(--white);
+    }
+
+    .banner--genero .panel--ella .heading {
+      color: var(--navy);
+    }
+
+    .banner--genero .panel .sub-label {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: clamp(10px, 0.8vw, 14px);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-top: 12px;
+    }
+
+    .banner--genero .panel--el .sub-label {
+      color: rgba(255,255,255,0.4);
+    }
+
+    .banner--genero .panel--ella .sub-label {
+      color: var(--muted);
+    }
+
+    .banner--genero .divider-line {
+      position: absolute;
+      top: 15%;
+      bottom: 15%;
+      left: 50%;
+      width: 2px;
+      background: var(--pumpkin);
+      z-index: 2;
+      transform: translateX(-50%);
+    }
+
+    /* ═══════════════════════════════════════
+       BANNER 6: LO MÁS VENDIDO
+       ═══════════════════════════════════════ */
+    .banner--vendido {
+      background: var(--cream);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .banner--vendido .heading {
+      font-size: clamp(32px, 4.5vw, 80px);
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+
+    .banner--vendido .rule {
+      width: 80px;
+      height: 2px;
+      background: var(--pumpkin);
+      margin-bottom: 24px;
+    }
+
+    .banner--vendido .subtext {
+      font-size: clamp(12px, 1vw, 18px);
+      color: var(--muted);
+    }
+
+    /* ═══════════════════════════════════════
+       BANNER 7: ENVÍO GRATIS
+       ═══════════════════════════════════════ */
+    .banner--envio {
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(24px, 6%, 100px);
+      padding: 0 clamp(24px, 5%, 80px);
+    }
+
+    .banner--envio .text-block {
+      text-align: left;
+    }
+
+    .banner--envio .heading {
+      font-size: clamp(32px, 4.5vw, 80px);
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .banner--envio .subtext {
+      font-size: clamp(12px, 1.1vw, 20px);
+      color: var(--cream);
+      opacity: 0.7;
+    }
+
+    .banner--envio .icon-block {
+      flex-shrink: 0;
+    }
+
+    .banner--envio .arrow-motif {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .banner--envio .arrow-motif .arrow-line {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .banner--envio .arrow-motif .arrow-bar {
+      height: 2px;
+      background: var(--pumpkin);
+    }
+
+    /* ═══════════════════════════════════════
+       BANNER 8: EXCLUSIVOS
+       ═══════════════════════════════════════ */
+    .banner--exclusivos {
+      background: linear-gradient(135deg, #0F1D30 0%, var(--navy) 40%, #1A3254 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .banner--exclusivos .glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(184,149,106,0.06) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .banner--exclusivos .heading {
+      font-size: clamp(28px, 4vw, 72px);
+      font-weight: 400;
+      color: var(--gold);
+      position: relative;
+      z-index: 1;
+      margin-bottom: 8px;
+      letter-spacing: 0.25em;
+    }
+
+    .banner--exclusivos .gold-rule {
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.5;
+      margin: 16px 0 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .banner--exclusivos .subtext {
+      font-size: clamp(12px, 1vw, 17px);
+      color: var(--cream);
+      opacity: 0.5;
+      position: relative;
+      z-index: 1;
+    }
+
+    .banner--exclusivos .corner-diamond {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border: 1px solid var(--gold);
+      transform: rotate(45deg);
+      opacity: 0.2;
+    }
+
+    .banner--exclusivos .corner-diamond--tl { top: 40px; left: 40px; }
+    .banner--exclusivos .corner-diamond--tr { top: 40px; right: 40px; }
+    .banner--exclusivos .corner-diamond--bl { bottom: 40px; left: 40px; }
+    .banner--exclusivos .corner-diamond--br { bottom: 40px; right: 40px; }
+
+    /* ═══════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════ */
+    .page-footer {
+      text-align: center;
+      padding: 60px 24px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .page-footer a {
+      color: var(--navy);
+      text-decoration: none;
+    }
+
+    /* ═══════════════════════════════════════
+       SCREENSHOT INFO BOX
+       ═══════════════════════════════════════ */
+    .info-box {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 24px;
+    }
+
+    .info-box-inner {
+      background: var(--white);
+      border-left: 3px solid var(--pumpkin);
+      padding: 20px 24px;
+      font-size: 13px;
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    .info-box-inner strong {
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+
+    .info-box-inner code {
+      background: #F0EDE8;
+      padding: 2px 6px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     PAGE HEADER
+     ═══════════════════════════════════════ -->
+<header class="page-header">
+  <div class="logo-mark">
+    <svg viewBox="-1 -2 102 48" width="120" height="56" xmlns="http://www.w3.org/2000/svg" aria-label="Privé">
+      <g fill="none" stroke="#FFFFFF" stroke-width="1.3" stroke-linecap="square" stroke-linejoin="miter">
+        <path d="M2 44 V8 H10 A7 7 0 0 1 10 22 H2"/>
+        <path d="M21 44 V8 H29 A7 7 0 0 1 29 22 H21 M29 22 L37 44"/>
+        <path d="M42 8 V44"/>
+        <path d="M48 8 L63 44 L78 8"/>
+        <path d="M84 44 V8 H97 M84 26 H94 M84 44 H97"/>
+      </g>
+      <line x1="90" y1="5" x2="96" y2="-1" stroke="#E87722" stroke-width="1.3" stroke-linecap="square"/>
+    </svg>
+  </div>
+  <h1>Banners para Shopify</h1>
+  <p>8 banners premium — 1920 &times; 600px — listos para captura y subida a Shopify.</p>
+</header>
+
+<!-- ═══════════════════════════════════════
+     NAVIGATION
+     ═══════════════════════════════════════ -->
+<nav class="banner-nav" aria-label="Navegación de banners">
+  <div class="banner-nav-inner">
+    <a href="#banner-1">01 Hero</a>
+    <a href="#banner-2">02 Nuevos Ingresos</a>
+    <a href="#banner-3">03 Estuches</a>
+    <a href="#banner-4">04 Ofertas</a>
+    <a href="#banner-5">05 Él / Ella</a>
+    <a href="#banner-6">06 Más Vendido</a>
+    <a href="#banner-7">07 Envío Gratis</a>
+    <a href="#banner-8">08 Exclusivos</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════
+     HOW TO USE
+     ═══════════════════════════════════════ -->
+<div class="info-box">
+  <div class="info-box-inner">
+    <strong>Cómo exportar los banners</strong><br>
+    1. Abre esta página en Chrome a pantalla completa (1920px de ancho mínimo).<br>
+    2. Haz clic en "Copiar CSS" para obtener los estilos de cada banner.<br>
+    3. Para capturar como PNG: abre DevTools → selecciona el <code>.banner-frame</code> → clic derecho → <code>Capture node screenshot</code>.<br>
+    4. Alternativa: usa una extensión como GoFullPage o la herramienta de recortes del sistema.<br>
+    5. Sube la imagen a Shopify en <code>Online Store → Themes → Customize → Image banner</code>.
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     BANNER 1: HERO
+     ═══════════════════════════════════════ -->
+<section class="banner-section" id="banner-1">
+  <div class="banner-label">Banner 01</div>
+  <h2 class="banner-title">Hero — Declaración de Marca</h2>
+  <p class="banner-desc">Banner principal del sitio. Presencia de marca pura con el wordmark PRIVÉ en gran escala.</p>
+
+  <div class="banner-frame">
+    <div class="banner banner--hero" data-banner-id="1">
+      <svg viewBox="-1 -2 102 48" width="320" height="150" xmlns="http://www.w3.org/2000/svg" class="hero-logo" aria-label="Privé">
+        <g fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter">
+          <path d="M2 44 V8 H10 A7 7 0 0 1 10 22 H2"/>
+          <path d="M21 44 V8 H29 A7 7 0 0 1 29 22 H21 M29 22 L37 44"/>
+          <path d="M42 8 V44"/>
+          <path d="M48 8 L63 44 L78 8"/>
+          <path d="M84 44 V8 H97 M84 26 H94 M84 44 H97"/>
+        </g>
+        <line x1="90" y1="5" x2="96" y2="-1" stroke="#E87722" stroke-width="1" stroke-linecap="square"/>
+      </svg>
+      <div class="hero-accent-line"></div>
+      <p class="hero-tagline">Fragancias auténticas. Envíos a todo Honduras.</p>
+      <p class="hero-sub" style="margin-top: 24px;">Luxury Perfumes</p>
+      <div class="hero-stripe"></div>
+    </div>
+  </div>
+
+  <div class="mobile-preview-label">Vista móvil (375px)</div>
+  <div class="mobile-frame">
+    <div class="banner banner--hero">
+      <svg viewBox="-1 -2 102 48" width="140" height="66" xmlns="http://www.w3.org/2000/svg" class="hero-logo" aria-label="Privé">
+        <g fill="none" stroke="#FFFFFF" stroke-width="1.3" stroke-linecap="square" stroke-linejoin="miter">
+          <path d="M2 44 V8 H10 A7 7 0 0 1 10 22 H2"/>
+          <path d="M21 44 V8 H29 A7 7 0 0 1 29 22 H21 M29 22 L37 44"/>
+          <path d="M42 8 V44"/>
+          <path d="M48 8 L63 44 L78 8"/>
+          <path d="M84 44 V8 H97 M84 26 H94 M84 44 H97"/>
+        </g>
+        <line x1="90" y1="5" x2="96" y2="-1" stroke="#E87722" stroke-width="1.3" stroke-linecap="square"/>
+      </svg>
+      <div class="hero-accent-line"></div>
+      <p class="hero-tagline" style="font-size: 11px;">Fragancias auténticas. Envíos a todo Honduras.</p>
+      <div class="hero-stripe"></div>
+    </div>
+  </div>
+
+  <div class="banner-actions">
+    <button class="btn-copy" onclick="copyCss(1)">Copiar CSS</button>
+    <span class="screenshot-note">Captura: DevTools → node screenshot (1920&times;600)</span>
+  </div>
+</section>
+
+<div class="divider"><hr></div>
+
+<!-- ═══════════════════════════════════════
+     BANNER 2: NUEVOS INGRESOS
+     ═══════════════════════════════════════ -->
+<section class="banner-section" id="banner-2">
+  <div class="banner-label">Banner 02</div>
+  <h2 class="banner-title">Nuevos Ingresos</h2>
+  <p class="banner-desc">Anuncia nuevas fragancias. División diagonal con contraste crema/navy.</p>
+
+  <div class="banner-frame">
+    <div class="banner banner--nuevos" data-banner-id="2">
+      <div class="diagonal-split"></div>
+      <div class="left">
+        <p class="heading">Nuevos<br>Ingresos</p>
+        <p class="subtext">Las fragancias más recientes del mercado.</p>
+      </div>
+      <div class="right"></div>
+    </div>
+  </div>
+
+  <div class="mobile-preview-label">Vista móvil (375px)</div>
+  <div class="mobile-frame">
+    <div class="banner banner--nuevos">
+      <div class="diagonal-split"></div>
+      <div class="left">
+        <p class="heading" style="font-size: 20px;">Nuevos<br>Ingresos</p>
+        <p class="subtext" style="font-size: 10px;">Las fragancias más recientes del mercado.</p>
+      </div>
+      <div class="right"></div>
+    </div>
+  </div>
+
+  <div class="banner-actions">
+    <button class="btn-copy" onclick="copyCss(2)">Copiar CSS</button>
+    <span class="screenshot-note">Captura: DevTools → node screenshot (1920&times;600)</span>
+  </div>
+</section>
+
+<div class="divider"><hr></div>
+
+<!-- ═══════════════════════════════════════
+     BANNER 3: ESTUCHES Y SETS
+     ═══════════════════════════════════════ -->
+<section class="banner-section" id="banner-3">
+  <div class="banner-label">Banner 03</div>
+  <h2 class="banner-title">Estuches y Sets</h2>
+  <p class="banner-desc">Promoción de sets de regalo. Fondo crema con CTA naranja en la parte inferior.</p>
+
+  <div class="banner-frame">
+    <div class="banner banner--estuches" data-banner-id="3">
+      <!-- Gift box icon -->
+      <div class="gift-icon">
+        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="22" width="48" height="30" stroke="#E87722" stroke-width="1.5" fill="none"/>
+          <rect x="8" y="14" width="40" height="8" stroke="#E87722" stroke-width="1.5" fill="none"/>
+          <line x1="28" y1="14" x2="28" y2="52" stroke="#E87722" stroke-width="1.5"/>
+          <path d="M28 14 C28 14 20 6 16 10 C12 14 20 14 28 14" stroke="#E87722" stroke-width="1.5" fill="none"/>
+          <path d="M28 14 C28 14 36 6 40 10 C44 14 36 14 28 14" stroke="#E87722" stroke-width="1.5" fill="none"/>
+        </svg>
+      </div>
+      <p class="heading">Estuches y Sets</p>
+      <p class="subtext">El regalo perfecto para cada ocasión.</p>
+      <div class="cta-bar">Ver Colección</div>
+    </div>
+  </div>
+
+  <div class="mobile-preview-label">Vista móvil (375px)</div>
+  <div class="mobile-frame">
+    <div class="banner banner--estuches">
+      <div class="gift-icon">
+        <svg width="32" height="32" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="22" width="48" height="30" stroke="#E87722" stroke-width="2" fill="none"/>
+          <rect x="8" y="14" width="40" height="8" stroke="#E87722" stroke-width="2" fill="none"/>
+          <line x1="28" y1="14" x2="28" y2="52" stroke="#E87722" stroke-width="2"/>
+          <path d="M28 14 C28 14 20 6 16 10 C12 14 20 14 28 14" stroke="#E87722" stroke-width="2" fill="none"/>
+          <path d="M28 14 C28 14 36 6 40 10 C44 14 36 14 28 14" stroke="#E87722" stroke-width="2" fill="none"/>
+        </svg>
+      </div>
+      <p class="heading" style="font-size: 18px;">Estuches y Sets</p>
+      <p class="subtext" style="font-size: 10px;">El regalo perfecto para cada ocasión.</p>
+      <div class="cta-bar" style="height: 36px; font-size: 9px;">Ver Colección</div>
+    </div>
+  </div>
+
+  <div class="banner-actions">
+    <button class="btn-copy" onclick="copyCss(3)">Copiar CSS</button>
+    <span class="screenshot-note">Captura: DevTools → node screenshot (1920&times;600)</span>
+  </div>
+</section>
+
+<div class="divider"><hr></div>
+
+<!-- ═══════════════════════════════════════
+     BANNER 4: OFERTAS ESPECIALES
+     ═══════════════════════════════════════ -->
+<section class="banner-section" id="banner-4">
+  <div class="banner-label">Banner 04</div>
+  <h2 class="banner-title">Ofertas Especiales</h2>
+  <p class="banner-desc">Reemplaza el banner "CLEARANCE" actual. Premium y elegante, no de descuento.</p>
+
+  <div class="banner-frame">
+    <div class="banner banner--ofertas" data-banner-id="4">
+      <div class="pattern"></div>
+      <div class="corner-accent corner-accent--tl"></div>
+      <div class="corner-accent corner-accent--br"></div>
+      <p class="heading">Ofertas Especiales</p>
+      <p class="subtext">Precios exclusivos por tiempo limitado.</p>
+      <div class="accent-dots">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile-preview-label">Vista móvil (375px)</div>
+  <div class="mobile-frame">
+    <div class="banner banner--ofertas">
+      <div class="pattern"></div>
+      <p class="heading" style="font-size: 22px;">Ofertas Especiales</p>
+      <p class="subtext" style="font-size: 10px;">Precios exclusivos por tiempo limitado.</p>
+      <div class="accent-dots">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner-actions">
+    <button class="btn-copy" onclick="copyCss(4)">Copiar CSS</button>
+    <span class="screenshot-note">Captura: DevTools → node screenshot (1920&times;600)</span>
+  </div>
+</section>
+
+<div class="divider"><hr></div>
+
+<!-- ═══════════════════════════════════════
+     BANNER 5: PARA ÉL / PARA ELLA
+     ═══════════════════════════════════════ -->
+<section class="banner-section" id="banner-5">
+  <div class="banner-label">Banner 05</div>
+  <h2 class="banner-title">Para Él / Para Ella</h2>
+  <p class="banner-desc">División editorial de género. Estilo revista de moda con línea divisoria naranja.</p>
+
+  <div class="banner-frame">
+    <div class="banner banner--genero" data-banner-id="5">
+      <div class="panel panel--el">
+        <p class="heading">Para Él</p>
+        <p class="sub-label">Fragancias masculinas</p>
+      </div>
+      <div class="divider-line"></div>
+      <div class="panel panel--ella">
+        <p class="heading">Para Ella</p>
+        <p class="sub-label">Fragancias femeninas</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile-preview-label">Vista móvil (375px)</div>
+  <div class="mobile-frame">
+    <div class="banner banner--genero">
+      <div class="panel panel--el">
+        <p class="heading" style="font-size: 20px;">Para Él</p>
+        <p class="sub-label" style="font-size: 8px;">Fragancias masculinas</p>
+      </div>
+      <div class="divider-line"></div>
+      <div class="panel panel--ella">
+        <p class="heading" style="font-size: 20px;">Para Ella</p>
+        <p class="sub-label" style="font-size: 8px;">Fragancias femeninas</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner-actions">
+    <button class="btn-copy" onclick="copyCss(5)">Copiar CSS</button>
+    <span class="screenshot-note">Captura: DevTools → node screenshot (1920&times;600)</span>
+  </div>
+</section>
+
+<div class="divider"><hr></div>
+
+<!-- ═══════════════════════════════════════
+     BANNER 6: LO MÁS VENDIDO
+     ═══════════════════════════════════════ -->
+<section class="banner-section" id="banner-6">
+  <div class="banner-label">Banner 06</div>
+  <h2 class="banner-title">Lo Más Vendido</h2>
+  <p class="banner-desc">Banner minimalista y seguro. Deja que la tipografía hable por sí sola.</p>
+
+  <div class="banner-frame">
+    <div class="banner banner--vendido" data-banner-id="6">
+      <p class="heading">Lo Más Vendido</p>
+      <div class="rule"></div>
+      <p class="subtext">Las fragancias favoritas de nuestros clientes.</p>
+    </div>
+  </div>
+
+  <div class="mobile-preview-label">Vista móvil (375px)</div>
+  <div class="mobile-frame">
+    <div class="banner banner--vendido">
+      <p class="heading" style="font-size: 22px;">Lo Más Vendido</p>
+      <div class="rule" style="width: 40px;"></div>
+      <p class="subtext" style="font-size: 10px;">Las fragancias favoritas de nuestros clientes.</p>
+    </div>
+  </div>
+
+  <div class="banner-actions">
+    <button class="btn-copy" onclick="copyCss(6)">Copiar CSS</button>
+    <span class="screenshot-note">Captura: DevTools → node screenshot (1920&times;600)</span>
+  </div>
+</section>
+
+<div class="divider"><hr></div>
+
+<!-- ═══════════════════════════════════════
+     BANNER 7: ENVÍO GRATIS
+     ═══════════════════════════════════════ -->
+<section class="banner-section" id="banner-7">
+  <div class="banner-label">Banner 07</div>
+  <h2 class="banner-title">Envío Gratis</h2>
+  <p class="banner-desc">Banner de conversión. Motivo de flechas en naranja para comunicar movimiento y entrega.</p>
+
+  <div class="banner-frame">
+    <div class="banner banner--envio" data-banner-id="7">
+      <div class="text-block">
+        <p class="heading">Envío Gratis</p>
+        <p class="subtext">En compras mayores a L. 800</p>
+      </div>
+      <div class="icon-block">
+        <svg width="140" height="100" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Ícono de entrega">
+          <!-- Truck body -->
+          <rect x="4" y="30" width="80" height="44" stroke="#E87722" stroke-width="1.5" fill="none"/>
+          <!-- Cab -->
+          <path d="M84 44 H116 L130 62 V74 H84" stroke="#E87722" stroke-width="1.5" fill="none"/>
+          <!-- Wheels -->
+          <circle cx="30" cy="78" r="10" stroke="#E87722" stroke-width="1.5" fill="none"/>
+          <circle cx="108" cy="78" r="10" stroke="#E87722" stroke-width="1.5" fill="none"/>
+          <!-- Arrow on truck -->
+          <line x1="20" y1="52" x2="60" y2="52" stroke="#E87722" stroke-width="1.5"/>
+          <polyline points="52,46 60,52 52,58" stroke="#E87722" stroke-width="1.5" fill="none"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile-preview-label">Vista móvil (375px)</div>
+  <div class="mobile-frame">
+    <div class="banner banner--envio" style="gap: 16px; padding: 0 16px;">
+      <div class="text-block">
+        <p class="heading" style="font-size: 22px;">Envío Gratis</p>
+        <p class="subtext" style="font-size: 10px;">En compras mayores a L. 800</p>
+      </div>
+      <div class="icon-block">
+        <svg width="60" height="44" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="30" width="80" height="44" stroke="#E87722" stroke-width="2.5" fill="none"/>
+          <path d="M84 44 H116 L130 62 V74 H84" stroke="#E87722" stroke-width="2.5" fill="none"/>
+          <circle cx="30" cy="78" r="10" stroke="#E87722" stroke-width="2.5" fill="none"/>
+          <circle cx="108" cy="78" r="10" stroke="#E87722" stroke-width="2.5" fill="none"/>
+          <line x1="20" y1="52" x2="60" y2="52" stroke="#E87722" stroke-width="2.5"/>
+          <polyline points="52,46 60,52 52,58" stroke="#E87722" stroke-width="2.5" fill="none"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner-actions">
+    <button class="btn-copy" onclick="copyCss(7)">Copiar CSS</button>
+    <span class="screenshot-note">Captura: DevTools → node screenshot (1920&times;600)</span>
+  </div>
+</section>
+
+<div class="divider"><hr></div>
+
+<!-- ═══════════════════════════════════════
+     BANNER 8: EXCLUSIVOS
+     ═══════════════════════════════════════ -->
+<section class="banner-section" id="banner-8">
+  <div class="banner-label">Banner 08</div>
+  <h2 class="banner-title">Edición Exclusiva</h2>
+  <p class="banner-desc">El único banner que usa gold (#B8956A). Reservado para exclusividad. Premium, raro, aspiracional.</p>
+
+  <div class="banner-frame">
+    <div class="banner banner--exclusivos" data-banner-id="8">
+      <div class="glow"></div>
+      <div class="corner-diamond corner-diamond--tl"></div>
+      <div class="corner-diamond corner-diamond--tr"></div>
+      <div class="corner-diamond corner-diamond--bl"></div>
+      <div class="corner-diamond corner-diamond--br"></div>
+      <p class="heading">Edición Exclusiva</p>
+      <div class="gold-rule"></div>
+      <p class="subtext">Fragancias que no encontrarás en otro lugar.</p>
+    </div>
+  </div>
+
+  <div class="mobile-preview-label">Vista móvil (375px)</div>
+  <div class="mobile-frame">
+    <div class="banner banner--exclusivos">
+      <div class="glow"></div>
+      <p class="heading" style="font-size: 20px;">Edición Exclusiva</p>
+      <div class="gold-rule"></div>
+      <p class="subtext" style="font-size: 10px;">Fragancias que no encontrarás en otro lugar.</p>
+    </div>
+  </div>
+
+  <div class="banner-actions">
+    <button class="btn-copy" onclick="copyCss(8)">Copiar CSS</button>
+    <span class="screenshot-note">Captura: DevTools → node screenshot (1920&times;600)</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════ -->
+<footer class="page-footer">
+  <p>Privé Perfumes — Sistema de Banners v1.0</p>
+  <p style="margin-top: 4px;"><a href="index.html">← Volver al Design System</a></p>
+</footer>
+
+<!-- ═══════════════════════════════════════
+     COPY CSS SCRIPT
+     ═══════════════════════════════════════ -->
+<script>
+const bannerCss = {
+  1: `/* Banner 1: Hero — Brand Statement */
+.banner--hero {
+  width: 1920px;
+  height: 600px;
+  background: #192E49;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-family: 'Barlow', sans-serif;
+}
+.banner--hero .hero-tagline {
+  font-style: italic;
+  font-weight: 300;
+  font-size: 20px;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.05em;
+}
+.banner--hero .hero-stripe {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: #E87722;
+}`,
+
+  2: `/* Banner 2: Nuevos Ingresos */
+.banner--nuevos {
+  width: 1920px;
+  height: 600px;
+  display: flex;
+  background: #F5F1EC;
+  position: relative;
+}
+.banner--nuevos .left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 80px;
+  z-index: 2;
+}
+.banner--nuevos .left .heading {
+  font-family: 'Jost', sans-serif;
+  font-size: 72px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #192E49;
+  line-height: 1;
+}
+.banner--nuevos .right {
+  flex: 1;
+  background: #192E49;
+}
+.banner--nuevos .diagonal-split {
+  position: absolute;
+  top: 0;
+  left: -1px;
+  width: calc(50% + 60px);
+  height: 100%;
+  background: #F5F1EC;
+  clip-path: polygon(0 0, calc(100% - 60px) 0, 100% 100%, 0 100%);
+  z-index: 1;
+}`,
+
+  3: `/* Banner 3: Estuches y Sets */
+.banner--estuches {
+  width: 1920px;
+  height: 600px;
+  background: #F5F1EC;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-family: 'Jost', sans-serif;
+}
+.banner--estuches .heading {
+  font-size: 68px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #192E49;
+}
+.banner--estuches .cta-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: #C96518;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-size: 14px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}`,
+
+  4: `/* Banner 4: Ofertas Especiales */
+.banner--ofertas {
+  width: 1920px;
+  height: 600px;
+  background: #192E49;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.banner--ofertas .pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,0.5) 40px, rgba(255,255,255,0.5) 41px);
+}
+.banner--ofertas .heading {
+  font-family: 'Jost', sans-serif;
+  font-size: 80px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #FFFFFF;
+}`,
+
+  5: `/* Banner 5: Para Él / Para Ella */
+.banner--genero {
+  width: 1920px;
+  height: 600px;
+  display: flex;
+  position: relative;
+}
+.banner--genero .panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.banner--genero .panel--el {
+  background: #192E49;
+}
+.banner--genero .panel--ella {
+  background: #F5F1EC;
+}
+.banner--genero .heading {
+  font-family: 'Jost', sans-serif;
+  font-size: 72px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+.banner--genero .divider-line {
+  position: absolute;
+  top: 15%;
+  bottom: 15%;
+  left: 50%;
+  width: 2px;
+  background: #E87722;
+  transform: translateX(-50%);
+}`,
+
+  6: `/* Banner 6: Lo Más Vendido */
+.banner--vendido {
+  width: 1920px;
+  height: 600px;
+  background: #F5F1EC;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.banner--vendido .heading {
+  font-family: 'Jost', sans-serif;
+  font-size: 80px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #192E49;
+}
+.banner--vendido .rule {
+  width: 80px;
+  height: 2px;
+  background: #E87722;
+  margin: 20px 0 24px;
+}`,
+
+  7: `/* Banner 7: Envío Gratis */
+.banner--envio {
+  width: 1920px;
+  height: 600px;
+  background: #192E49;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  padding: 0 80px;
+}
+.banner--envio .heading {
+  font-family: 'Jost', sans-serif;
+  font-size: 80px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #FFFFFF;
+}
+.banner--envio .subtext {
+  font-family: 'Barlow', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  color: #F5F1EC;
+  opacity: 0.7;
+}`,
+
+  8: `/* Banner 8: Edición Exclusiva */
+.banner--exclusivos {
+  width: 1920px;
+  height: 600px;
+  background: linear-gradient(135deg, #0F1D30 0%, #192E49 40%, #1A3254 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.banner--exclusivos .heading {
+  font-family: 'Jost', sans-serif;
+  font-size: 72px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: #B8956A;
+}
+.banner--exclusivos .gold-rule {
+  width: 60px;
+  height: 1px;
+  background: #B8956A;
+  opacity: 0.5;
+  margin: 16px 0 20px;
+}
+.banner--exclusivos .subtext {
+  font-family: 'Barlow', sans-serif;
+  font-size: 17px;
+  font-weight: 300;
+  color: #F5F1EC;
+  opacity: 0.5;
+}`
+};
+
+function copyCss(id) {
+  const css = bannerCss[id];
+  if (!css) return;
+
+  navigator.clipboard.writeText(css).then(() => {
+    const btn = document.querySelector(`[data-banner-id="${id}"]`)
+      .closest('.banner-section, section')
+      ?.querySelector('.btn-copy')
+      || event.target;
+    btn.textContent = 'Copiado';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = 'Copiar CSS';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+
+/* Smooth scroll for nav */
+document.querySelectorAll('.banner-nav a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
