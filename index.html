@@ -1569,11 +1569,15 @@ body {
 
     <div class="subsection">
       <h3 class="subsection__title">Circle mark &amp; wordmark</h3>
-      <div style="display:flex;gap:48px;align-items:center;flex-wrap:wrap;margin-bottom:32px;background:#192E49;border-radius:8px;padding:32px">
-        <!-- Circle mark — contained icon use -->
-        <img src="assets/logo-I-centered-v4.svg" alt="Privé circle mark" width="80" height="80">
-        <!-- Letters-only wordmark — general-purpose use -->
-        <img src="assets/logo-letters-v4.svg" alt="Privé wordmark" width="200" height="200">
+      <div style="display:flex;gap:48px;align-items:center;flex-wrap:wrap;margin-bottom:32px;padding:32px;background:var(--background);border:1px solid var(--border);border-radius:8px">
+        <!-- Circle mark — on white bg so the navy circle is visible -->
+        <img src="assets/logo-I-centered-v4.svg" alt="Privé circle mark" width="140" height="140">
+        <!-- Separator -->
+        <div style="width:1px;height:120px;background:var(--border)"></div>
+        <!-- Letters-only wordmark on navy bg -->
+        <div style="background:#192E49;border-radius:8px;padding:24px 48px;display:flex;align-items:center;justify-content:center">
+          <img src="assets/logo-letters-v4.svg" alt="Privé wordmark" width="280" height="100">
+        </div>
       </div>
     </div>
 
