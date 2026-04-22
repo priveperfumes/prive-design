@@ -1550,33 +1550,78 @@ body {
   <div class="container">
     <div class="section__label">02</div>
     <h2 class="section__title">Logo System</h2>
-    <p class="section__desc">Two-tier system: the <strong>circle mark</strong> (navy circle + white PRIVÉ) is for contained icons — favicons, social avatars, standalone marks. The <strong>letters-only wordmark</strong> (white letterforms, transparent background) is the primary building block for everything else — headers, logos on backgrounds, wordmarks at any size. On dark or colored backgrounds the white letters render naturally; on white backgrounds, use CSS <code>filter:invert(1)</code> or inline SVG with <code>fill="#192E49"</code>. Three SVG asset files live in <code>assets/</code>.</p>
+    <p class="section__desc">Two-tier system with two treatment styles. The <strong>circle mark</strong> (navy circle + white PRIVÉ) is for contained icons — favicons, social avatars, standalone marks. The <strong>letters-only wordmark</strong> (white letterforms, transparent background) is the primary building block for everything else. Each mark comes in two styles: <strong>Style A (monochrome)</strong> — all elements in the same color; <strong>Style B (accent highlighted)</strong> — letters in primary color with the É accent stroke in pumpkin orange (#E87722). On dark or colored backgrounds the white letters render naturally; on white backgrounds, use CSS <code>filter:invert(1)</code> or inline SVG with <code>fill="#192E49"</code>. Six SVG asset files live in <code>assets/</code>.</p>
 
     <div class="subsection">
       <h3 class="subsection__title">Logo on backgrounds</h3>
+      <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px"><strong>A</strong> = Monochrome (all elements same color) &nbsp;&bull;&nbsp; <strong>B</strong> = Accent highlighted (orange accent on E)</p>
       <div class="logo-showcase">
-        <div class="logo-showcase__bg logo-showcase__bg--white">
-          <img src="assets/logo-wordmark-v4.svg" alt="Privé wordmark on white" width="200" height="52" style="filter:invert(1)">
+        <div class="logo-showcase__bg logo-showcase__bg--white" style="display:flex;gap:24px;align-items:center;justify-content:center">
+          <div style="text-align:center">
+            <img src="assets/logo-wordmark-mono.svg" alt="Privé monochrome on white" width="160" height="42" style="filter:invert(1)">
+            <div style="font-size:10px;color:#999;margin-top:6px;letter-spacing:0.1em">A</div>
+          </div>
+          <div style="width:1px;height:40px;background:rgba(0,0,0,0.1)"></div>
+          <div style="text-align:center">
+            <img src="assets/logo-wordmark-v4.svg" alt="Privé accent on white" width="160" height="42" style="filter:invert(1) hue-rotate(180deg) saturate(1.5)">
+            <div style="font-size:10px;color:#999;margin-top:6px;letter-spacing:0.1em">B</div>
+          </div>
         </div>
-        <div class="logo-showcase__bg logo-showcase__bg--navy">
-          <img src="assets/logo-wordmark-v4.svg" alt="Privé wordmark on navy" width="200" height="52">
+        <div class="logo-showcase__bg logo-showcase__bg--navy" style="display:flex;gap:24px;align-items:center;justify-content:center">
+          <div style="text-align:center">
+            <img src="assets/logo-wordmark-mono.svg" alt="Privé monochrome on navy" width="160" height="42">
+            <div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:6px;letter-spacing:0.1em">A</div>
+          </div>
+          <div style="width:1px;height:40px;background:rgba(255,255,255,0.2)"></div>
+          <div style="text-align:center">
+            <img src="assets/logo-wordmark-v4.svg" alt="Privé accent on navy" width="160" height="42">
+            <div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:6px;letter-spacing:0.1em">B</div>
+          </div>
         </div>
-        <div class="logo-showcase__bg logo-showcase__bg--pumpkin">
-          <img src="assets/logo-wordmark-v4.svg" alt="Privé wordmark on pumpkin" width="200" height="52">
+        <div class="logo-showcase__bg logo-showcase__bg--pumpkin" style="display:flex;gap:24px;align-items:center;justify-content:center">
+          <div style="text-align:center">
+            <img src="assets/logo-wordmark-mono.svg" alt="Privé monochrome on pumpkin" width="160" height="42">
+            <div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:6px;letter-spacing:0.1em">A</div>
+          </div>
+          <div style="width:1px;height:40px;background:rgba(255,255,255,0.2)"></div>
+          <div style="text-align:center">
+            <img src="assets/logo-wordmark-v4.svg" alt="Privé accent on pumpkin" width="160" height="42">
+            <div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:6px;letter-spacing:0.1em">B</div>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="subsection">
       <h3 class="subsection__title">Circle mark &amp; wordmark</h3>
-      <div style="display:flex;gap:48px;align-items:center;flex-wrap:wrap;margin-bottom:32px;padding:32px;background:var(--background);border:1px solid var(--border);border-radius:8px">
-        <!-- Circle mark — on white bg so the navy circle is visible -->
-        <img src="assets/logo-I-centered-v4.svg" alt="Privé circle mark" width="140" height="140">
+      <div style="display:flex;gap:32px;align-items:center;flex-wrap:wrap;margin-bottom:32px;padding:32px;background:var(--background);border:1px solid var(--border);border-radius:8px">
+        <!-- Circle marks: A (mono) and B (accent) -->
+        <div style="display:flex;gap:20px;align-items:center">
+          <div style="text-align:center">
+            <img src="assets/logo-I-centered-v4.svg" alt="Privé circle mark monochrome" width="120" height="120">
+            <div style="font-size:10px;color:var(--text-muted);margin-top:6px;letter-spacing:0.1em">A</div>
+          </div>
+          <div style="text-align:center">
+            <img src="assets/logo-circle-accent.svg" alt="Privé circle mark accent" width="120" height="120">
+            <div style="font-size:10px;color:var(--text-muted);margin-top:6px;letter-spacing:0.1em">B</div>
+          </div>
+        </div>
         <!-- Separator -->
         <div style="width:1px;height:120px;background:var(--border)"></div>
-        <!-- Letters-only wordmark on navy bg -->
-        <div style="background:#192E49;border-radius:8px;padding:24px 48px;display:flex;align-items:center;justify-content:center">
-          <img src="assets/logo-wordmark-v4.svg" alt="Privé wordmark" width="280" height="73">
+        <!-- Wordmarks: A (mono) and B (accent) on navy bg -->
+        <div style="display:flex;gap:20px;align-items:center">
+          <div style="text-align:center">
+            <div style="background:#192E49;border-radius:8px;padding:20px 32px;display:flex;align-items:center;justify-content:center">
+              <img src="assets/logo-wordmark-mono.svg" alt="Privé wordmark monochrome" width="220" height="58">
+            </div>
+            <div style="font-size:10px;color:var(--text-muted);margin-top:6px;letter-spacing:0.1em">A</div>
+          </div>
+          <div style="text-align:center">
+            <div style="background:#192E49;border-radius:8px;padding:20px 32px;display:flex;align-items:center;justify-content:center">
+              <img src="assets/logo-wordmark-v4.svg" alt="Privé wordmark accent" width="220" height="58">
+            </div>
+            <div style="font-size:10px;color:var(--text-muted);margin-top:6px;letter-spacing:0.1em">B</div>
+          </div>
         </div>
       </div>
     </div>
@@ -1585,15 +1630,42 @@ body {
       <h3 class="subsection__title">Circle mark sizes</h3>
       <div class="logo-sizes">
         <div class="logo-size-item">
-          <img src="assets/logo-I-centered-v4.svg" alt="Privé circle mark 32px" width="32" height="32">
+          <div style="display:flex;gap:8px;align-items:flex-end">
+            <div style="text-align:center">
+              <img src="assets/logo-I-centered-v4.svg" alt="Privé circle mark 32px mono" width="32" height="32">
+              <div style="font-size:9px;color:var(--text-muted);margin-top:4px">A</div>
+            </div>
+            <div style="text-align:center">
+              <img src="assets/logo-circle-accent.svg" alt="Privé circle mark 32px accent" width="32" height="32">
+              <div style="font-size:9px;color:var(--text-muted);margin-top:4px">B</div>
+            </div>
+          </div>
           <div class="logo-size-item__label">Favicon · 32px</div>
         </div>
         <div class="logo-size-item">
-          <img src="assets/logo-I-centered-v4.svg" alt="Privé circle mark 64px" width="64" height="64">
+          <div style="display:flex;gap:12px;align-items:flex-end">
+            <div style="text-align:center">
+              <img src="assets/logo-I-centered-v4.svg" alt="Privé circle mark 64px mono" width="64" height="64">
+              <div style="font-size:9px;color:var(--text-muted);margin-top:4px">A</div>
+            </div>
+            <div style="text-align:center">
+              <img src="assets/logo-circle-accent.svg" alt="Privé circle mark 64px accent" width="64" height="64">
+              <div style="font-size:9px;color:var(--text-muted);margin-top:4px">B</div>
+            </div>
+          </div>
           <div class="logo-size-item__label">Social · 64px</div>
         </div>
         <div class="logo-size-item">
-          <img src="assets/logo-I-centered-v4.svg" alt="Privé circle mark 120px" width="120" height="120">
+          <div style="display:flex;gap:16px;align-items:flex-end">
+            <div style="text-align:center">
+              <img src="assets/logo-I-centered-v4.svg" alt="Privé circle mark 120px mono" width="120" height="120">
+              <div style="font-size:9px;color:var(--text-muted);margin-top:4px">A</div>
+            </div>
+            <div style="text-align:center">
+              <img src="assets/logo-circle-accent.svg" alt="Privé circle mark 120px accent" width="120" height="120">
+              <div style="font-size:9px;color:var(--text-muted);margin-top:4px">B</div>
+            </div>
+          </div>
           <div class="logo-size-item__label">Large · 120px</div>
         </div>
       </div>
@@ -1601,15 +1673,42 @@ body {
       <h3 class="subsection__title">Wordmark sizes</h3>
       <div class="logo-sizes">
         <div class="logo-size-item">
-          <img src="assets/logo-wordmark-v4.svg" alt="Privé wordmark 64px" width="64" height="17" style="background:#192E49;border-radius:4px;padding:8px 4px">
+          <div style="display:flex;gap:8px;align-items:flex-end">
+            <div style="text-align:center">
+              <img src="assets/logo-wordmark-mono.svg" alt="Privé wordmark 64px mono" width="64" height="17" style="background:#192E49;border-radius:4px;padding:8px 4px">
+              <div style="font-size:9px;color:var(--text-muted);margin-top:4px">A</div>
+            </div>
+            <div style="text-align:center">
+              <img src="assets/logo-wordmark-v4.svg" alt="Privé wordmark 64px accent" width="64" height="17" style="background:#192E49;border-radius:4px;padding:8px 4px">
+              <div style="font-size:9px;color:var(--text-muted);margin-top:4px">B</div>
+            </div>
+          </div>
           <div class="logo-size-item__label">Header · 64px</div>
         </div>
         <div class="logo-size-item">
-          <img src="assets/logo-wordmark-v4.svg" alt="Privé wordmark 160px" width="160" height="42" style="background:#192E49;border-radius:4px;padding:12px 8px">
+          <div style="display:flex;gap:12px;align-items:flex-end">
+            <div style="text-align:center">
+              <img src="assets/logo-wordmark-mono.svg" alt="Privé wordmark 160px mono" width="160" height="42" style="background:#192E49;border-radius:4px;padding:12px 8px">
+              <div style="font-size:9px;color:var(--text-muted);margin-top:4px">A</div>
+            </div>
+            <div style="text-align:center">
+              <img src="assets/logo-wordmark-v4.svg" alt="Privé wordmark 160px accent" width="160" height="42" style="background:#192E49;border-radius:4px;padding:12px 8px">
+              <div style="font-size:9px;color:var(--text-muted);margin-top:4px">B</div>
+            </div>
+          </div>
           <div class="logo-size-item__label">Medium · 160px</div>
         </div>
         <div class="logo-size-item">
-          <img src="assets/logo-wordmark-v4.svg" alt="Privé wordmark 280px" width="280" height="73" style="background:#192E49;border-radius:4px;padding:16px 12px">
+          <div style="display:flex;gap:16px;align-items:flex-end">
+            <div style="text-align:center">
+              <img src="assets/logo-wordmark-mono.svg" alt="Privé wordmark 280px mono" width="280" height="73" style="background:#192E49;border-radius:4px;padding:16px 12px">
+              <div style="font-size:9px;color:var(--text-muted);margin-top:4px">A</div>
+            </div>
+            <div style="text-align:center">
+              <img src="assets/logo-wordmark-v4.svg" alt="Privé wordmark 280px accent" width="280" height="73" style="background:#192E49;border-radius:4px;padding:16px 12px">
+              <div style="font-size:9px;color:var(--text-muted);margin-top:4px">B</div>
+            </div>
+          </div>
           <div class="logo-size-item__label">Large · 280px</div>
         </div>
       </div>
@@ -1619,20 +1718,38 @@ body {
       <h3 class="subsection__title">SVG assets</h3>
       <div class="code-section">
         <div class="code-section__header">
-          <span class="code-section__title">Circle mark — favicon, social, standalone · assets/logo-I-centered-v4.svg</span>
+          <span class="code-section__title">Circle mark Style A (monochrome) — favicon, social, standalone · assets/logo-I-centered-v4.svg</span>
           <button class="copy-btn" onclick="copyCode(this)">Copy</button>
         </div>
         <div class="code-block" id="logo-svg-code">&lt;img src="assets/logo-I-centered-v4.svg" alt="Privé" width="120" height="120"&gt;</div>
       </div>
       <div class="code-section">
         <div class="code-section__header">
-          <span class="code-section__title">Wordmark (tight crop, orange accent) — headers, backgrounds, general use · assets/logo-wordmark-v4.svg</span>
+          <span class="code-section__title">Circle mark Style B (orange accent) · assets/logo-circle-accent.svg</span>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <div class="code-block">&lt;img src="assets/logo-circle-accent.svg" alt="Privé" width="120" height="120"&gt;</div>
+      </div>
+      <div class="code-section">
+        <div class="code-section__header">
+          <span class="code-section__title">Wordmark Style A (monochrome) — headers, backgrounds · assets/logo-wordmark-mono.svg</span>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <div class="code-block">&lt;!-- On dark/colored backgrounds — white letters render naturally --&gt;
+&lt;img src="assets/logo-wordmark-mono.svg" alt="Privé" width="200" height="52"&gt;
+
+&lt;!-- On white backgrounds — invert to get dark letters --&gt;
+&lt;img src="assets/logo-wordmark-mono.svg" alt="Privé" width="200" height="52" style="filter:invert(1)"&gt;</div>
+      </div>
+      <div class="code-section">
+        <div class="code-section__header">
+          <span class="code-section__title">Wordmark Style B (orange accent) — headers, backgrounds · assets/logo-wordmark-v4.svg</span>
           <button class="copy-btn" onclick="copyCode(this)">Copy</button>
         </div>
         <div class="code-block">&lt;!-- On dark/colored backgrounds — white letters + orange accent render naturally --&gt;
 &lt;img src="assets/logo-wordmark-v4.svg" alt="Privé" width="200" height="52"&gt;
 
-&lt;!-- On white backgrounds — invert to get dark letters --&gt;
+&lt;!-- On white backgrounds — invert to get dark letters (note: accent color also inverts) --&gt;
 &lt;img src="assets/logo-wordmark-v4.svg" alt="Privé" width="200" height="52" style="filter:invert(1)"&gt;</div>
       </div>
       <div class="code-section">
@@ -1647,31 +1764,46 @@ body {
     <div class="subsection">
       <h3 class="subsection__title">Color variations</h3>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px;margin-top:16px">
-        <!-- Navy on white -->
+        <!-- Navy on white — Style A (mono) -->
         <div style="background:#FFFFFF;border:1px solid var(--border);border-radius:8px;padding:24px 16px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px">
-          <img src="assets/logo-wordmark-v4.svg" alt="Navy on white" width="130" height="34" style="filter:invert(1)">
-          <span style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em">Navy on white</span>
+          <img src="assets/logo-wordmark-mono.svg" alt="Navy on white mono" width="130" height="34" style="filter:invert(1)">
+          <span style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em">Navy on white · A</span>
         </div>
-        <!-- White on pumpkin -->
+        <!-- Navy + accent on white — Style B -->
+        <div style="background:#FFFFFF;border:1px solid var(--border);border-radius:8px;padding:24px 16px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px">
+          <img src="assets/logo-wordmark-v4.svg" alt="Navy accent on white" width="130" height="34" style="filter:invert(1) hue-rotate(180deg) saturate(1.5)">
+          <span style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em">Navy + accent · B</span>
+        </div>
+        <!-- White on pumpkin — Style A (mono) -->
         <div style="background:#E87722;border-radius:8px;padding:24px 16px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px">
-          <img src="assets/logo-wordmark-v4.svg" alt="White on pumpkin" width="130" height="34">
-          <span style="font-size:11px;color:rgba(255,255,255,0.8);text-transform:uppercase;letter-spacing:0.05em">White on pumpkin</span>
+          <img src="assets/logo-wordmark-mono.svg" alt="White on pumpkin mono" width="130" height="34">
+          <span style="font-size:11px;color:rgba(255,255,255,0.8);text-transform:uppercase;letter-spacing:0.05em">White on pumpkin · A</span>
         </div>
-        <!-- Gold on navy — exclusivity -->
+        <!-- White + accent on navy — Style B -->
         <div style="background:#192E49;border-radius:8px;padding:24px 16px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px">
-          <img src="assets/logo-wordmark-v4.svg" alt="Gold on navy" width="130" height="34" style="filter:brightness(0) invert(1) sepia(1) saturate(0.6) hue-rotate(350deg) brightness(0.82)">
-          <span style="font-size:11px;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:0.05em">Gold on navy</span>
+          <img src="assets/logo-wordmark-v4.svg" alt="White accent on navy" width="130" height="34">
+          <span style="font-size:11px;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:0.05em">White + accent · B</span>
+        </div>
+        <!-- Gold on navy — exclusivity (Style A variant) -->
+        <div style="background:#192E49;border-radius:8px;padding:24px 16px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px">
+          <img src="assets/logo-wordmark-mono.svg" alt="Gold on navy" width="130" height="34" style="filter:brightness(0) invert(1) sepia(1) saturate(0.6) hue-rotate(350deg) brightness(0.82)">
+          <span style="font-size:11px;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:0.05em">Gold on navy · A</span>
         </div>
         <!-- All-white knockout -->
         <div style="background:linear-gradient(135deg,#2a4a6b,#192E49);border-radius:8px;padding:24px 16px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;position:relative;overflow:hidden">
           <div style="position:absolute;inset:0;opacity:0.15;background:url('assets/logo-circle-v4.svg') center/cover no-repeat"></div>
-          <img src="assets/logo-wordmark-v4.svg" alt="White knockout" width="130" height="34" style="position:relative">
-          <span style="font-size:11px;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:0.05em;position:relative">Photo overlay</span>
+          <img src="assets/logo-wordmark-mono.svg" alt="White knockout" width="130" height="34" style="position:relative">
+          <span style="font-size:11px;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:0.05em;position:relative">Photo overlay · A</span>
         </div>
-        <!-- All-navy solid -->
+        <!-- Navy on light — Style A -->
         <div style="background:#F5F0EB;border-radius:8px;padding:24px 16px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px">
-          <img src="assets/logo-wordmark-v4.svg" alt="Navy solid" width="130" height="34" style="filter:invert(1)">
-          <span style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em">Navy on light</span>
+          <img src="assets/logo-wordmark-mono.svg" alt="Navy on light mono" width="130" height="34" style="filter:invert(1)">
+          <span style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em">Navy on light · A</span>
+        </div>
+        <!-- Navy + accent on light — Style B -->
+        <div style="background:#F5F0EB;border-radius:8px;padding:24px 16px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px">
+          <img src="assets/logo-wordmark-v4.svg" alt="Navy accent on light" width="130" height="34" style="filter:invert(1) hue-rotate(180deg) saturate(1.5)">
+          <span style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em">Navy + accent · B</span>
         </div>
       </div>
     </div>
