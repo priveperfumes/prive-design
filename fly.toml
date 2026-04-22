@@ -1,0 +1,5 @@
+app = "prive-design"
+primary_region = "iad"
+
+[build]
+  dockerfile = "Dockerfile"

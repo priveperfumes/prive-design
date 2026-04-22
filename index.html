@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privé Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Barlow:wght@400;500;600;400i&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════
+   PRIVÉ DESIGN SYSTEM — LIVE STYLEGUIDE
+   Source: DESIGN.md v2.0.0
+   ═══════════════════════════════════════════ */
+
+:root {
+  --primary: #192E49;
+  --on-primary: #FFFFFF;
+  --text-heading: #192E49;
+  --text-body: #2E2E2E;
+  --text-muted: #8A8A8A;
+  --background: #FFFFFF;
+  --surface: #F5F1EC;
+  --border: #E0E0E0;
+  --border-strong: #ABABAB;
+  --accent: #E87722;
+  --accent-hover: #D06318;
+  --accent-light: #FFF3ED;
+  --accent-gold: #B8956A;
+  --success: #5A7A6F;
+  --success-bg: #DEE4E2;
+  --error: #B3332B;
+  --error-bg: #FAF1F0;
+
+  --font-heading: 'Jost', sans-serif;
+  --font-body: 'Barlow', sans-serif;
+
+  --radius-storefront: 0px;
+  --radius-internal: 14px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--text-body);
+  background: var(--background);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+.nav {
+  background: var(--primary);
+  padding: 0 40px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav__logo {
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--on-primary);
+}
+.nav__links {
+  display: flex;
+  gap: 24px;
+  margin-left: auto;
+}
+.nav__link {
+  font-family: var(--font-heading);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.nav__link:hover, .nav__link--active { color: var(--on-primary); }
+
+/* ── LAYOUT ── */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.section {
+  padding: 64px 0;
+  border-bottom: 1px solid var(--border);
+}
+.section:last-child { border-bottom: none; }
+.section__title {
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+}
+.section__subtitle {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--text-heading);
+  margin-bottom: 8px;
+}
+
+/* ── HERO ── */
+.hero {
+  padding: 80px 0 64px;
+  border-bottom: 1px solid var(--border);
+}
+.hero__tagline {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--text-body);
+  max-width: 600px;
+  margin-top: 16px;
+}
+
+/* ── COLOR SWATCHES ── */
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+.swatch {
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.swatch__fill {
+  height: 96px;
+  display: flex;
+  align-items: flex-end;
+  padding: 8px 12px;
+}
+.swatch__fill--dark { color: #FFFFFF; }
+.swatch__fill--light { color: var(--text-body); }
+.swatch__info {
+  padding: 12px;
+}
+.swatch__name {
+  font-family: var(--font-heading);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-heading);
+  margin-bottom: 4px;
+}
+.swatch__hex {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+.swatch__role {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* ── TYPOGRAPHY ── */
+.type-specimen { margin-bottom: 32px; }
+.type-specimen__sample {
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+.type-specimen__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.type-specimen__meta span::before {
+  content: attr(data-label) ": ";
+  font-weight: 600;
+}
+
+/* ── COMPONENTS ── */
+.component-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-start;
+}
+.component-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 24px;
+  font-family: var(--font-heading);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: box-shadow 0.15s, background-color 0.15s;
+}
+.btn--primary {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+.btn--primary:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.btn--secondary {
+  background: var(--surface);
+  color: var(--primary);
+}
+.btn--cta {
+  background: var(--accent);
+  color: var(--on-primary);
+}
+.btn--cta:hover {
+  background: var(--accent-hover);
+  box-shadow: 0 4px 12px rgba(232,119,34,0.3);
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  font-family: var(--font-heading);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.badge--new { background: var(--primary); color: var(--on-primary); }
+.badge--limited { background: var(--accent-gold); color: #000; }
+.badge--exclusive { background: var(--accent); color: var(--on-primary); }
+.badge--classic { background: var(--surface); color: var(--text-body); }
+
+/* Cards */
+.card-demo {
+  width: 280px;
+  border: 1px solid var(--border);
+  background: var(--background);
+  transition: box-shadow 0.15s;
+}
+.card-demo:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+.card-demo__img {
+  width: 100%;
+  height: 320px;
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-demo__img-placeholder {
+  font-family: var(--font-heading);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.card-demo__body {
+  padding: 16px;
+}
+.card-demo__brand {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+.card-demo__name {
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--text-heading);
+  margin-bottom: 8px;
+}
+.card-demo__mood {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-style: italic;
+  color: var(--text-body);
+  margin-bottom: 12px;
+}
+.card-demo__specs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.card-demo__price {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--text-heading);
+  margin-bottom: 12px;
+}
+
+/* Input */
+.input-demo {
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid var(--border);
+  background: var(--background);
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--text-body);
+  width: 280px;
+  outline: none;
+}
+.input-demo:focus {
+  border-color: var(--primary);
+}
+
+/* ── CONTEXT COMPARISON ── */
+.context-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.context-card {
+  border: 1px solid var(--border);
+  padding: 24px;
+}
+.context-card__title {
+  font-family: var(--font-heading);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+.context-card .btn, .context-card .badge, .context-card .input-demo {
+  border-radius: var(--radius-internal);
+}
+
+/* ── VOICE ── */
+.voice-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.voice-card {
+  border: 1px solid var(--border);
+  padding: 24px;
+}
+.voice-card__label {
+  font-family: var(--font-heading);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-heading);
+  margin-bottom: 8px;
+}
+.voice-card__text {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--text-body);
+}
+.voice-card--bad .voice-card__label { color: var(--error); }
+.voice-card--bad .voice-card__text {
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--primary);
+  padding: 32px 0;
+}
+.footer__text {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: rgba(245,241,236,0.6);
+  text-align: center;
+}
+.footer__text a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* ── ACCENT SHADE STRIP ── */
+.accent-strip {
+  display: flex;
+  height: 48px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.accent-strip__seg {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ── CODE ── */
+.code-block {
+  background: #1a1a2e;
+  color: #e0e0e0;
+  padding: 20px 24px;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  overflow-x: auto;
+  margin: 16px 0;
+}
+.code-block .token-comment { color: #6a9955; }
+.code-block .token-key { color: #9cdcfe; }
+.code-block .token-value { color: #ce9178; }
+.code-block .token-punct { color: #808080; }
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav">
+  <div class="nav__logo">Privé Design</div>
+  <div class="nav__links">
+    <a href="#colors" class="nav__link nav__link--active">Colors</a>
+    <a href="#typography" class="nav__link">Typography</a>
+    <a href="#components" class="nav__link">Components</a>
+    <a href="#contexts" class="nav__link">Contexts</a>
+    <a href="#voice" class="nav__link">Voice</a>
+    <a href="#tokens" class="nav__link">Tokens</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="container">
+    <h1 style="font-family:var(--font-heading);font-size:3.5rem;font-weight:300;letter-spacing:0.02em;text-transform:uppercase;color:var(--text-heading);">Privé Design System</h1>
+    <p class="hero__tagline">Friendly exclusive. Confident, not arrogant. Warm, not casual. Editorial minimalism with tropical warmth.</p>
+  </div>
+</section>
+
+<!-- ═══ COLORS ═══ -->
+<section class="section" id="colors">
+  <div class="container">
+    <h2 class="section__title">01 — Colors</h2>
+    <h3 class="section__subtitle">Core Palette</h3>
+
+    <div class="swatch-grid" style="margin-bottom:32px">
+      <div class="swatch">
+        <div class="swatch__fill swatch__fill--dark" style="background:var(--primary)">#192E49</div>
+        <div class="swatch__info">
+          <div class="swatch__name">Primary Navy</div>
+          <div class="swatch__hex">#192E49</div>
+          <div class="swatch__role">Headings, buttons, brand mark</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__fill swatch__fill--dark" style="background:var(--accent)">#E87722</div>
+        <div class="swatch__info">
+          <div class="swatch__name">Accent Pumpkin</div>
+          <div class="swatch__hex">#E87722</div>
+          <div class="swatch__role">CTAs, interactions, badges</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__fill swatch__fill--dark" style="background:var(--accent-gold)">#B8956A</div>
+        <div class="swatch__info">
+          <div class="swatch__name">Accent Gold</div>
+          <div class="swatch__hex">#B8956A</div>
+          <div class="swatch__role">Exclusivity signals ONLY</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__fill swatch__fill--light" style="background:var(--background)">#FFFFFF</div>
+        <div class="swatch__info">
+          <div class="swatch__name">Background</div>
+          <div class="swatch__hex">#FFFFFF</div>
+          <div class="swatch__role">Every surface starts here</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__fill swatch__fill--light" style="background:var(--surface)">#F5F1EC</div>
+        <div class="swatch__info">
+          <div class="swatch__name">Surface Warm</div>
+          <div class="swatch__hex">#F5F1EC</div>
+          <div class="swatch__role">Secondary bg, not cold grey</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__fill swatch__fill--light" style="background:var(--text-body);color:#fff">#2E2E2E</div>
+        <div class="swatch__info">
+          <div class="swatch__name">Text Body</div>
+          <div class="swatch__hex">#2E2E2E</div>
+          <div class="swatch__role">Body copy</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="section__subtitle">Accent Shade Scale</h3>
+    <div class="accent-strip" style="margin-bottom:32px">
+      <div class="accent-strip__seg" style="background:var(--accent-light);color:var(--accent)">50 · #FFF3ED</div>
+      <div class="accent-strip__seg" style="background:#FFE0D0;color:var(--accent)">100 · #FFE0D0</div>
+      <div class="accent-strip__seg" style="background:var(--accent);color:#fff">500 · #E87722</div>
+      <div class="accent-strip__seg" style="background:var(--accent-hover);color:#fff">600 · #D06318</div>
+    </div>
+
+    <h3 class="section__subtitle">Semantic</h3>
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="swatch__fill swatch__fill--dark" style="background:var(--success)">#5A7A6F</div>
+        <div class="swatch__info">
+          <div class="swatch__name">Success</div>
+          <div class="swatch__hex">#5A7A6F</div>
+          <div class="swatch__role">In-stock, confirmations</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__fill swatch__fill--light" style="background:var(--success-bg)">#DEE4E2</div>
+        <div class="swatch__info">
+          <div class="swatch__name">Success Bg</div>
+          <div class="swatch__hex">#DEE4E2</div>
+          <div class="swatch__role"></div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__fill swatch__fill--dark" style="background:var(--error)">#B3332B</div>
+        <div class="swatch__info">
+          <div class="swatch__name">Error</div>
+          <div class="swatch__hex">#B3332B</div>
+          <div class="swatch__role">Sale, out-of-stock</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__fill swatch__fill--light" style="background:var(--error-bg)">#FAF1F0</div>
+        <div class="swatch__info">
+          <div class="swatch__name">Error Bg</div>
+          <div class="swatch__hex">#FAF1F0</div>
+          <div class="swatch__role"></div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__fill swatch__fill--light" style="background:var(--border)">#E0E0E0</div>
+        <div class="swatch__info">
+          <div class="swatch__name">Border</div>
+          <div class="swatch__hex">#E0E0E0</div>
+          <div class="swatch__role"></div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__fill swatch__fill--light" style="background:var(--text-muted)">#8A8A8A</div>
+        <div class="swatch__info">
+          <div class="swatch__name">Text Muted</div>
+          <div class="swatch__hex">#8A8A8A</div>
+          <div class="swatch__role">Captions, metadata</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="section__subtitle" style="margin-top:32px">Dead Colors (Never Use)</h3>
+    <div class="swatch-grid">
+      <div class="swatch" style="opacity:0.35">
+        <div class="swatch__fill swatch__fill--dark" style="background:#2A9D8F">#2A9D8F</div>
+        <div class="swatch__info">
+          <div class="swatch__name" style="text-decoration:line-through">Teal</div>
+          <div class="swatch__hex">#2A9D8F</div>
+          <div class="swatch__role">❌ Judge.me plugin color</div>
+        </div>
+      </div>
+      <div class="swatch" style="opacity:0.35">
+        <div class="swatch__fill swatch__fill--dark" style="background:#108474">#108474</div>
+        <div class="swatch__info">
+          <div class="swatch__name" style="text-decoration:line-through">Green</div>
+          <div class="swatch__hex">#108474</div>
+          <div class="swatch__role">❌ Old accent</div>
+        </div>
+      </div>
+      <div class="swatch" style="opacity:0.35">
+        <div class="swatch__fill swatch__fill--dark" style="background:#FF4500">#FF4500</div>
+        <div class="swatch__info">
+          <div class="swatch__name" style="text-decoration:line-through">Flame</div>
+          <div class="swatch__hex">#FF4500</div>
+          <div class="swatch__role">❌ Old accent</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TYPOGRAPHY ═══ -->
+<section class="section" id="typography">
+  <div class="container">
+    <h2 class="section__title">02 — Typography</h2>
+
+    <div class="type-specimen">
+      <div class="type-specimen__sample" style="font-family:var(--font-heading);font-size:3.5rem;font-weight:300;letter-spacing:0.02em;text-transform:uppercase;color:var(--text-heading)">Hero Display</div>
+      <div class="type-specimen__meta">
+        <span data-label="Font">Jost 300</span>
+        <span data-label="Size">3.5rem / 56px</span>
+        <span data-label="Tracking">0.02em</span>
+        <span data-label="Transform">Uppercase</span>
+      </div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-specimen__sample" style="font-family:var(--font-heading);font-size:2rem;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-heading)">Section Heading</div>
+      <div class="type-specimen__meta">
+        <span data-label="Font">Jost 400</span>
+        <span data-label="Size">2rem / 32px</span>
+        <span data-label="Tracking">0.18em</span>
+        <span data-label="Transform">Uppercase</span>
+      </div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-specimen__sample" style="font-family:var(--font-heading);font-size:1.5rem;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-heading)">Card Title</div>
+      <div class="type-specimen__meta">
+        <span data-label="Font">Jost 400</span>
+        <span data-label="Size">1.5rem / 24px</span>
+        <span data-label="Tracking">0.18em</span>
+      </div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-specimen__sample" style="font-family:var(--font-heading);font-size:0.8125rem;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-heading)">Small Heading / Product Name</div>
+      <div class="type-specimen__meta">
+        <span data-label="Font">Jost 400</span>
+        <span data-label="Size">0.8125rem / 13px</span>
+        <span data-label="Tracking">0.18em</span>
+      </div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-specimen__sample" style="font-family:var(--font-heading);font-size:0.6875rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-heading)">LABEL / BADGE / NAV LINK</div>
+      <div class="type-specimen__meta">
+        <span data-label="Font">Jost 500</span>
+        <span data-label="Size">0.6875rem / 11px</span>
+        <span data-label="Tracking">0.18em</span>
+      </div>
+    </div>
+
+    <hr style="border:none;border-top:1px solid var(--border);margin:32px 0">
+
+    <div class="type-specimen">
+      <div class="type-specimen__sample" style="font-family:var(--font-body);font-size:0.9375rem;font-weight:400;line-height:1.55;color:var(--text-body)">Body text for descriptions, product details, and general reading. Sentence case, warm, readable. Barlow at 15px with 1.55 line-height gives comfortable reading for the Honduras market.</div>
+      <div class="type-specimen__meta">
+        <span data-label="Font">Barlow 400</span>
+        <span data-label="Size">0.9375rem / 15px</span>
+        <span data-label="Line-height">1.55</span>
+      </div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-specimen__sample" style="font-family:var(--font-body);font-size:0.9375rem;font-weight:600;line-height:1.55;color:var(--text-heading)">Bold body for emphasis, product specs, and key details that need to stand out.</div>
+      <div class="type-specimen__meta">
+        <span data-label="Font">Barlow 600</span>
+        <span data-label="Size">0.9375rem / 15px</span>
+      </div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-specimen__sample" style="font-family:var(--font-body);font-size:0.9375rem;font-weight:400;font-style:italic;line-height:1.5;color:var(--text-body)">La hora azul, antes de que alguien encienda una luz. Mood sentences are the only place the brand voice is expressive in type.</div>
+      <div class="type-specimen__meta">
+        <span data-label="Font">Barlow 400 Italic</span>
+        <span data-label="Role">Mood sentence</span>
+        <span data-label="Size">0.9375rem / 15px</span>
+      </div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-specimen__sample" style="font-family:var(--font-heading);font-size:1.25rem;font-weight:400;letter-spacing:0.04em;color:var(--text-heading)">L. 2,870</div>
+      <div class="type-specimen__meta">
+        <span data-label="Font">Jost 400</span>
+        <span data-label="Size">1.25rem / 20px</span>
+        <span data-label="Role">Price</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ COMPONENTS ═══ -->
+<section class="section" id="components">
+  <div class="container">
+    <h2 class="section__title">03 — Components</h2>
+
+    <h3 class="section__subtitle">Buttons</h3>
+    <div class="component-row" style="margin-bottom:48px">
+      <button class="btn btn--primary">Primary Action</button>
+      <button class="btn btn--secondary">Secondary</button>
+      <button class="btn btn--cta">Comprar Ahora</button>
+    </div>
+
+    <h3 class="section__subtitle">Badges</h3>
+    <div class="component-row" style="margin-bottom:48px">
+      <span class="badge badge--new">Nuevo</span>
+      <span class="badge badge--limited">Edición Limitada</span>
+      <span class="badge badge--exclusive">Exclusivo</span>
+      <span class="badge badge--classic">Clásico</span>
+    </div>
+
+    <h3 class="section__subtitle">Product Card</h3>
+    <div class="component-row" style="margin-bottom:48px">
+      <div class="card-demo">
+        <div class="card-demo__img">
+          <span class="card-demo__img-placeholder">Product Image</span>
+        </div>
+        <div class="card-demo__body">
+          <div class="card-demo__brand">Dolce &amp; Gabbana</div>
+          <div class="card-demo__name">Devotion Parfum</div>
+          <div class="card-demo__mood">Donde el deseo se viste de lavanda y la noche huele a promesa.</div>
+          <div class="card-demo__specs">
+            <span class="badge badge--exclusive">EDP</span>
+            <span class="badge badge--classic">100 ml</span>
+          </div>
+          <div class="card-demo__price">L. 5,799</div>
+          <button class="btn btn--cta" style="width:100%">Pedir por WhatsApp</button>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="section__subtitle">Input</h3>
+    <div class="component-row" style="margin-bottom:48px">
+      <input class="input-demo" type="text" placeholder="Buscar fragancias...">
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTEXTS ═══ -->
+<section class="section" id="contexts">
+  <div class="container">
+    <h2 class="section__title">04 — Two Design Contexts</h2>
+
+    <div class="context-grid">
+      <div class="context-card">
+        <div class="context-card__title">Storefront · priveperfumes.com</div>
+        <div class="component-row" style="margin-bottom:16px">
+          <button class="btn btn--primary" style="border-radius:0">Navy Button</button>
+          <button class="btn btn--cta" style="border-radius:0">Pumpkin CTA</button>
+        </div>
+        <div class="component-row" style="margin-bottom:16px">
+          <span class="badge badge--exclusive" style="border-radius:0">0px radius</span>
+        </div>
+        <div style="font-family:var(--font-body);font-size:0.8125rem;color:var(--text-muted)">
+          Editorial luxury. Sharp edges. Jost + Barlow.
+        </div>
+      </div>
+      <div class="context-card">
+        <div class="context-card__title">Internal Tools · prive-staff</div>
+        <div class="component-row" style="margin-bottom:16px">
+          <button class="btn btn--primary" style="border-radius:14px">Navy Button</button>
+          <button class="btn btn--cta" style="border-radius:14px">Pumpkin CTA</button>
+        </div>
+        <div class="component-row" style="margin-bottom:16px">
+          <span class="badge badge--exclusive" style="border-radius:14px">14px radius</span>
+        </div>
+        <div style="font-family:var(--font-body);font-size:0.8125rem;color:var(--text-muted)">
+          Clean, efficient. Hacker aesthetic. Jost only.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ VOICE ═══ -->
+<section class="section" id="voice">
+  <div class="container">
+    <h2 class="section__title">05 — Brand Voice</h2>
+
+    <div class="voice-grid">
+      <div class="voice-card">
+        <div class="voice-card__label">Do</div>
+        <div class="voice-card__text">La hora azul, antes de que alguien encienda una luz. Mood over notes. Direct. Spanish-first. Max 2 emojis per asset.</div>
+      </div>
+      <div class="voice-card voice-card--bad">
+        <div class="voice-card__label">Don't</div>
+        <div class="voice-card__text">Bergamota, pachulí, sándalo. #Luxury #Perfume 💫✨🔥 Generic greetings. Hashtag spam. AI-slop phrases.</div>
+      </div>
+      <div class="voice-card">
+        <div class="voice-card__label">Personality</div>
+        <div class="voice-card__text">Confident, not arrogant. Warm, not casual. Masculine-leaning, not exclusionary. Premium through restraint, not price.</div>
+      </div>
+      <div class="voice-card">
+        <div class="voice-card__label">Tone</div>
+        <div class="voice-card__text">Short sentences. Respect the reader's time. Like a knowledgeable friend recommending something special.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TOKENS ═══ -->
+<section class="section" id="tokens">
+  <div class="container">
+    <h2 class="section__title">06 — Design Tokens (CSS)</h2>
+    <div class="code-block"><span class="token-punct">:</span><span class="token-key">root</span> <span class="token-punct">{</span>
+  <span class="token-key">--primary</span><span class="token-punct">:</span> <span class="token-value">#192E49</span><span class="token-punct">;</span>
+  <span class="token-key">--on-primary</span><span class="token-punct">:</span> <span class="token-value">#FFFFFF</span><span class="token-punct">;</span>
+  <span class="token-key">--accent</span><span class="token-punct">:</span> <span class="token-value">#E87722</span><span class="token-punct">;</span>
+  <span class="token-key">--accent-hover</span><span class="token-punct">:</span> <span class="token-value">#D06318</span><span class="token-punct">;</span>
+  <span class="token-key">--accent-light</span><span class="token-punct">:</span> <span class="token-value">#FFF3ED</span><span class="token-punct">;</span>
+  <span class="token-key">--accent-gold</span><span class="token-punct">:</span> <span class="token-value">#B8956A</span><span class="token-punct">;</span>
+  <span class="token-key">--text-heading</span><span class="token-punct">:</span> <span class="token-value">#192E49</span><span class="token-punct">;</span>
+  <span class="token-key">--text-body</span><span class="token-punct">:</span> <span class="token-value">#2E2E2E</span><span class="token-punct">;</span>
+  <span class="token-key">--text-muted</span><span class="token-punct">:</span> <span class="token-value">#8A8A8A</span><span class="token-punct">;</span>
+  <span class="token-key">--background</span><span class="token-punct">:</span> <span class="token-value">#FFFFFF</span><span class="token-punct">;</span>
+  <span class="token-key">--surface</span><span class="token-punct">:</span> <span class="token-value">#F5F1EC</span><span class="token-punct">;</span>
+  <span class="token-key">--border</span><span class="token-punct">:</span> <span class="token-value">#E0E0E0</span><span class="token-punct">;</span>
+  <span class="token-key">--border-strong</span><span class="token-punct">:</span> <span class="token-value">#ABABAB</span><span class="token-punct">;</span>
+  <span class="token-key">--success</span><span class="token-punct">:</span> <span class="token-value">#5A7A6F</span><span class="token-punct">;</span>
+  <span class="token-key">--success-bg</span><span class="token-punct">:</span> <span class="token-value">#DEE4E2</span><span class="token-punct">;</span>
+  <span class="token-key">--error</span><span class="token-punct">:</span> <span class="token-value">#B3332B</span><span class="token-punct">;</span>
+  <span class="token-key">--error-bg</span><span class="token-punct">:</span> <span class="token-value">#FAF1F0</span><span class="token-punct">;</span>
+
+  <span class="token-key">--font-heading</span><span class="token-punct">:</span> <span class="token-value">'Jost', sans-serif</span><span class="token-punct">;</span>
+  <span class="token-key">--font-body</span><span class="token-punct">:</span> <span class="token-value">'Barlow', sans-serif</span><span class="token-punct">;</span>
+  <span class="token-key">--radius-storefront</span><span class="token-punct">:</span> <span class="token-value">0px</span><span class="token-punct">;</span>
+  <span class="token-key">--radius-internal</span><span class="token-punct">:</span> <span class="token-value">14px</span><span class="token-punct">;</span>
+<span class="token-punct">}</span></div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <p class="footer__text">Privé Design System v2.0.0 — Source of truth: <a href="https://github.com/priveperfumes/prive-design">github.com/priveperfumes/prive-design</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
