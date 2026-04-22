@@ -1012,16 +1012,7 @@
      ═══════════════════════════════════════ -->
 <header class="page-header">
   <div class="logo-mark">
-    <svg viewBox="-1 -2 102 48" width="120" height="56" xmlns="http://www.w3.org/2000/svg" aria-label="Privé">
-      <g fill="none" stroke="#FFFFFF" stroke-width="1.3" stroke-linecap="square" stroke-linejoin="miter">
-        <path d="M2 44 V8 H10 A7 7 0 0 1 10 22 H2"/>
-        <path d="M21 44 V8 H29 A7 7 0 0 1 29 22 H21 M29 22 L37 44"/>
-        <path d="M42 8 V44"/>
-        <path d="M48 8 L63 44 L78 8"/>
-        <path d="M84 44 V8 H97 M84 26 H94 M84 44 H97"/>
-      </g>
-      <line x1="90" y1="5" x2="96" y2="-1" stroke="#E87722" stroke-width="1.3" stroke-linecap="square"/>
-    </svg>
+    <img src="assets/logo-letters-v4.svg" width="120" height="56" aria-label="Privé" style="filter: brightness(0) saturate(100%) invert(100%);">
   </div>
   <h1>Banners para Shopify</h1>
   <p>7 banners premium — 1920 &times; 600px — listos para captura y subida a Shopify.</p>
@@ -1050,12 +1041,14 @@
      ═══════════════════════════════════════ -->
 <div class="info-box">
   <div class="info-box-inner">
-    <strong>Cómo exportar los banners</strong><br>
-    1. Abre esta página en Chrome a pantalla completa (1920px de ancho mínimo).<br>
-    2. Haz clic en "Copiar CSS" para obtener los estilos de cada banner.<br>
-    3. Para capturar como PNG: abre DevTools → selecciona el <code>.banner-frame</code> → clic derecho → <code>Capture node screenshot</code>.<br>
-    4. Alternativa: usa una extensión como GoFullPage o la herramienta de recortes del sistema.<br>
-    5. Sube la imagen a Shopify en <code>Online Store → Themes → Customize → Image banner</code>.
+    <strong>Exportación automática de banners</strong><br>
+    1. Usa los botones "Desktop WebP" (1920×600px) y "Mobile WebP" (375×800px) para exportar banners individuales.<br>
+    2. Usa "Descargar Todos los Banners" para exportar todos los banners de una vez.<br>
+    3. Los archivos se exportan en formato WebP, calidad 92%, listos para Shopify.<br>
+    4. Sube las imágenes a Shopify en <code>Online Store → Themes → Customize → Image banner</code>.<br>
+    <div style="text-align: center; margin-top: 16px;">
+      <button class="btn-download" onclick="downloadAllBanners()" style="font-size: 12px; padding: 12px 24px;">Descargar Todos los Banners</button>
+    </div>
   </div>
 </div>
 
@@ -1070,16 +1063,10 @@
 
   <div class="banner-frame">
     <div class="banner banner--hero" data-banner-id="1">
-      <svg viewBox="-1 -2 102 48" width="320" height="150" xmlns="http://www.w3.org/2000/svg" class="hero-logo" aria-label="Privé">
-        <g fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter">
-          <path d="M2 44 V8 H10 A7 7 0 0 1 10 22 H2"/>
-          <path d="M21 44 V8 H29 A7 7 0 0 1 29 22 H21 M29 22 L37 44"/>
-          <path d="M42 8 V44"/>
-          <path d="M48 8 L63 44 L78 8"/>
-          <path d="M84 44 V8 H97 M84 26 H94 M84 44 H97"/>
-        </g>
-        <line x1="90" y1="5" x2="96" y2="-1" stroke="#E87722" stroke-width="1" stroke-linecap="square"/>
-      </svg>
+      <div class="hero-logo" style="position: relative; display: inline-block;">
+        <img src="assets/logo-letters-v4.svg" width="320" height="150" aria-label="Privé" style="filter: brightness(0) saturate(100%) invert(100%);">
+        <div style="position: absolute; top: 8px; right: 28px; width: 12px; height: 2px; background: #E87722; transform: rotate(-45deg);"></div>
+      </div>
       <div class="hero-accent-line"></div>
       <p class="hero-tagline">Fragancias que definen quien eres.</p>
       <p class="hero-sub" style="margin-top: 24px;">Luxury Perfumes · Honduras</p>
@@ -1090,16 +1077,10 @@
   <div class="mobile-preview-label">Vista móvil (375px)</div>
   <div class="mobile-frame">
     <div class="banner banner--hero">
-      <svg viewBox="-1 -2 102 48" width="140" height="66" xmlns="http://www.w3.org/2000/svg" class="hero-logo" aria-label="Privé">
-        <g fill="none" stroke="#FFFFFF" stroke-width="1.3" stroke-linecap="square" stroke-linejoin="miter">
-          <path d="M2 44 V8 H10 A7 7 0 0 1 10 22 H2"/>
-          <path d="M21 44 V8 H29 A7 7 0 0 1 29 22 H21 M29 22 L37 44"/>
-          <path d="M42 8 V44"/>
-          <path d="M48 8 L63 44 L78 8"/>
-          <path d="M84 44 V8 H97 M84 26 H94 M84 44 H97"/>
-        </g>
-        <line x1="90" y1="5" x2="96" y2="-1" stroke="#E87722" stroke-width="1.3" stroke-linecap="square"/>
-      </svg>
+      <div class="hero-logo" style="position: relative; display: inline-block;">
+        <img src="assets/logo-letters-v4.svg" width="140" height="66" aria-label="Privé" style="filter: brightness(0) saturate(100%) invert(100%);">
+        <div style="position: absolute; top: 4px; right: 12px; width: 6px; height: 1px; background: #E87722; transform: rotate(-45deg);"></div>
+      </div>
       <div class="hero-accent-line"></div>
       <p class="hero-tagline" style="font-size: 11px;">Fragancias que definen quien eres.</p>
       <div class="hero-stripe"></div>
@@ -1108,7 +1089,8 @@
 
   <div class="banner-actions">
     <button class="btn-copy" onclick="copyCss(1)">Copiar CSS</button>
-    <button class="btn-download" onclick="downloadPng(1)">Download PNG</button>
+    <button class="btn-download" onclick="downloadBanner(1, 'desktop')">Desktop WebP</button>
+    <button class="btn-download" onclick="downloadBanner(1, 'mobile')">Mobile WebP</button>
   </div>
 </section>
 
@@ -1968,55 +1950,196 @@ document.querySelectorAll('.banner-nav a').forEach(link => {
   });
 });
 
-/* Download banner as PNG at 1920×600 */
-async function downloadPng(id) {
+// Banner name mapping for file naming
+const bannerNames = {
+  1: 'hero',
+  2: 'nuevos',
+  3: 'coleccion-regalos',
+  4: 'ofertas',
+  5: 'genero',
+  6: 'mas-vendido',
+  7: 'exclusivos',
+  9: 'dia-madre',
+  10: 'san-valentin',
+  11: 'navidad'
+};
+
+/* Download banner as WebP with specified dimensions */
+async function downloadBanner(id, format) {
   const section = document.getElementById('banner-' + id);
   if (!section) return;
-  const frame = section.querySelector('.banner-frame');
-  const btn = section.querySelector('.btn-download');
-  
+
+  const isDesktop = format === 'desktop';
+  const frame = isDesktop ? section.querySelector('.banner-frame') : section.querySelector('.mobile-frame');
+  const btn = event.target;
+
+  // Determine dimensions
+  const width = isDesktop ? 1920 : 375;
+  const height = isDesktop ? 600 : 800;
+
   btn.disabled = true;
   btn.textContent = 'Generando...';
-  
+
   try {
     const canvas = await html2canvas(frame, {
-      width: 1920,
-      height: 600,
+      width: width,
+      height: height,
       scale: 1,
       useCORS: true,
       allowTaint: true,
-      backgroundColor: null,
-      windowWidth: 1920,
-      windowHeight: 600,
+      backgroundColor: '#FFFFFF', // Opaque background as required
+      windowWidth: isDesktop ? 1920 : 375,
+      windowHeight: isDesktop ? 600 : 800,
       onclone: (doc) => {
         // Force the cloned frame to exact banner dimensions
-        const clonedFrame = doc.querySelector('#banner-' + id + ' .banner-frame');
+        const clonedFrame = doc.querySelector(`#banner-${id} ${isDesktop ? '.banner-frame' : '.mobile-frame'}`);
         if (clonedFrame) {
-          clonedFrame.style.width = '1920px';
-          clonedFrame.style.height = '600px';
+          clonedFrame.style.width = width + 'px';
+          clonedFrame.style.height = height + 'px';
           clonedFrame.style.aspectRatio = 'unset';
         }
       }
     });
-    
-    const link = document.createElement('a');
-    link.download = 'prive-banner-' + id + '-1920x600.png';
-    link.href = canvas.toDataURL('image/png');
-    link.click();
-    
-    btn.textContent = 'Descargado';
-    setTimeout(() => {
-      btn.textContent = 'Download PNG';
-      btn.disabled = false;
-    }, 2000);
+
+    // Convert to WebP
+    canvas.toBlob((blob) => {
+      if (blob) {
+        const link = document.createElement('a');
+        const bannerName = bannerNames[id] || `banner-${id}`;
+        link.download = `prive-${bannerName}-${format}.webp`;
+        link.href = URL.createObjectURL(blob);
+        link.click();
+
+        btn.textContent = 'Descargado';
+        setTimeout(() => {
+          btn.textContent = `${format === 'desktop' ? 'Desktop' : 'Mobile'} WebP`;
+          btn.disabled = false;
+        }, 2000);
+      } else {
+        throw new Error('WebP not supported, falling back to PNG');
+      }
+    }, 'image/webp', 0.92);
+
   } catch (err) {
-    console.error('Error generating PNG:', err);
-    btn.textContent = 'Error';
-    setTimeout(() => {
-      btn.textContent = 'Download PNG';
-      btn.disabled = false;
-    }, 2000);
+    console.error('Error generating WebP, trying PNG fallback:', err);
+
+    // Fallback to PNG
+    try {
+      const link = document.createElement('a');
+      const bannerName = bannerNames[id] || `banner-${id}`;
+      link.download = `prive-${bannerName}-${format}.png`;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+
+      btn.textContent = 'Descargado (PNG)';
+      setTimeout(() => {
+        btn.textContent = `${format === 'desktop' ? 'Desktop' : 'Mobile'} WebP`;
+        btn.disabled = false;
+      }, 2000);
+    } catch (pngErr) {
+      console.error('Error generating PNG:', pngErr);
+      btn.textContent = 'Error';
+      setTimeout(() => {
+        btn.textContent = `${format === 'desktop' ? 'Desktop' : 'Mobile'} WebP`;
+        btn.disabled = false;
+      }, 2000);
+    }
   }
+}
+
+/* Download all banners */
+async function downloadAllBanners() {
+  const btn = event.target;
+  const originalText = btn.textContent;
+  const bannerIds = [1, 2, 3, 4, 5, 6, 7, 9, 10, 11];
+
+  btn.disabled = true;
+  btn.textContent = 'Descargando...';
+
+  let completed = 0;
+  const total = bannerIds.length * 2; // Desktop + Mobile for each banner
+
+  for (const id of bannerIds) {
+    try {
+      // Download desktop version
+      await downloadBannerSilent(id, 'desktop');
+      completed++;
+      btn.textContent = `Descargando... (${completed}/${total})`;
+
+      // Wait a bit between downloads to avoid overwhelming the browser
+      await new Promise(resolve => setTimeout(resolve, 500));
+
+      // Download mobile version
+      await downloadBannerSilent(id, 'mobile');
+      completed++;
+      btn.textContent = `Descargando... (${completed}/${total})`;
+
+      // Wait a bit between banners
+      await new Promise(resolve => setTimeout(resolve, 500));
+
+    } catch (err) {
+      console.error(`Error downloading banner ${id}:`, err);
+    }
+  }
+
+  btn.textContent = 'Completado';
+  setTimeout(() => {
+    btn.textContent = originalText;
+    btn.disabled = false;
+  }, 3000);
+}
+
+/* Silent download helper for batch downloads */
+async function downloadBannerSilent(id, format) {
+  const section = document.getElementById('banner-' + id);
+  if (!section) return;
+
+  const isDesktop = format === 'desktop';
+  const frame = isDesktop ? section.querySelector('.banner-frame') : section.querySelector('.mobile-frame');
+
+  // Determine dimensions
+  const width = isDesktop ? 1920 : 375;
+  const height = isDesktop ? 600 : 800;
+
+  const canvas = await html2canvas(frame, {
+    width: width,
+    height: height,
+    scale: 1,
+    useCORS: true,
+    allowTaint: true,
+    backgroundColor: '#FFFFFF',
+    windowWidth: isDesktop ? 1920 : 375,
+    windowHeight: isDesktop ? 600 : 800,
+    onclone: (doc) => {
+      const clonedFrame = doc.querySelector(`#banner-${id} ${isDesktop ? '.banner-frame' : '.mobile-frame'}`);
+      if (clonedFrame) {
+        clonedFrame.style.width = width + 'px';
+        clonedFrame.style.height = height + 'px';
+        clonedFrame.style.aspectRatio = 'unset';
+      }
+    }
+  });
+
+  return new Promise((resolve, reject) => {
+    canvas.toBlob((blob) => {
+      if (blob) {
+        const link = document.createElement('a');
+        const bannerName = bannerNames[id] || `banner-${id}`;
+        link.download = `prive-${bannerName}-${format}.webp`;
+        link.href = URL.createObjectURL(blob);
+        link.click();
+        resolve();
+      } else {
+        // Fallback to PNG
+        const link = document.createElement('a');
+        const bannerName = bannerNames[id] || `banner-${id}`;
+        link.download = `prive-${bannerName}-${format}.png`;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+        resolve();
+      }
+    }, 'image/webp', 0.92);
+  });
 }
 </script>
 
