@@ -1556,13 +1556,13 @@ body {
       <h3 class="subsection__title">Logo on backgrounds</h3>
       <div class="logo-showcase">
         <div class="logo-showcase__bg logo-showcase__bg--white">
-          <img src="assets/logo-letters-v4.svg" alt="Privé wordmark on white" width="200" height="200" style="filter:invert(1)">
+          <img src="assets/logo-wordmark-v4.svg" alt="Privé wordmark on white" width="200" height="52" style="filter:invert(1)">
         </div>
         <div class="logo-showcase__bg logo-showcase__bg--navy">
-          <img src="assets/logo-letters-v4.svg" alt="Privé wordmark on navy" width="200" height="200">
+          <img src="assets/logo-wordmark-v4.svg" alt="Privé wordmark on navy" width="200" height="52">
         </div>
         <div class="logo-showcase__bg logo-showcase__bg--pumpkin">
-          <img src="assets/logo-letters-v4.svg" alt="Privé wordmark on pumpkin" width="200" height="200">
+          <img src="assets/logo-wordmark-v4.svg" alt="Privé wordmark on pumpkin" width="200" height="52">
         </div>
       </div>
     </div>
@@ -1576,7 +1576,7 @@ body {
         <div style="width:1px;height:120px;background:var(--border)"></div>
         <!-- Letters-only wordmark on navy bg -->
         <div style="background:#192E49;border-radius:8px;padding:24px 48px;display:flex;align-items:center;justify-content:center">
-          <img src="assets/logo-letters-v4.svg" alt="Privé wordmark" width="280" height="100">
+          <img src="assets/logo-wordmark-v4.svg" alt="Privé wordmark" width="280" height="73">
         </div>
       </div>
     </div>
@@ -1601,15 +1601,15 @@ body {
       <h3 class="subsection__title">Wordmark sizes</h3>
       <div class="logo-sizes">
         <div class="logo-size-item">
-          <img src="assets/logo-letters-v4.svg" alt="Privé wordmark 64px" width="64" height="64" style="background:#192E49;border-radius:4px;padding:4px">
+          <img src="assets/logo-wordmark-v4.svg" alt="Privé wordmark 64px" width="64" height="17" style="background:#192E49;border-radius:4px;padding:8px 4px">
           <div class="logo-size-item__label">Header · 64px</div>
         </div>
         <div class="logo-size-item">
-          <img src="assets/logo-letters-v4.svg" alt="Privé wordmark 160px" width="160" height="160" style="background:#192E49;border-radius:4px;padding:8px">
+          <img src="assets/logo-wordmark-v4.svg" alt="Privé wordmark 160px" width="160" height="42" style="background:#192E49;border-radius:4px;padding:12px 8px">
           <div class="logo-size-item__label">Medium · 160px</div>
         </div>
         <div class="logo-size-item">
-          <img src="assets/logo-letters-v4.svg" alt="Privé wordmark 280px" width="280" height="280" style="background:#192E49;border-radius:4px;padding:12px">
+          <img src="assets/logo-wordmark-v4.svg" alt="Privé wordmark 280px" width="280" height="73" style="background:#192E49;border-radius:4px;padding:16px 12px">
           <div class="logo-size-item__label">Large · 280px</div>
         </div>
       </div>
@@ -1626,14 +1626,14 @@ body {
       </div>
       <div class="code-section">
         <div class="code-section__header">
-          <span class="code-section__title">Wordmark (letters-only) — headers, backgrounds, general use · assets/logo-letters-v4.svg</span>
+          <span class="code-section__title">Wordmark (tight crop, orange accent) — headers, backgrounds, general use · assets/logo-wordmark-v4.svg</span>
           <button class="copy-btn" onclick="copyCode(this)">Copy</button>
         </div>
-        <div class="code-block">&lt;!-- On dark/colored backgrounds — white letters render naturally --&gt;
-&lt;img src="assets/logo-letters-v4.svg" alt="Privé" width="200" height="200"&gt;
+        <div class="code-block">&lt;!-- On dark/colored backgrounds — white letters + orange accent render naturally --&gt;
+&lt;img src="assets/logo-wordmark-v4.svg" alt="Privé" width="200" height="52"&gt;
 
 &lt;!-- On white backgrounds — invert to get dark letters --&gt;
-&lt;img src="assets/logo-letters-v4.svg" alt="Privé" width="200" height="200" style="filter:invert(1)"&gt;</div>
+&lt;img src="assets/logo-wordmark-v4.svg" alt="Privé" width="200" height="52" style="filter:invert(1)"&gt;</div>
       </div>
       <div class="code-section">
         <div class="code-section__header">
@@ -1641,6 +1641,38 @@ body {
           <button class="copy-btn" onclick="copyCode(this)">Copy</button>
         </div>
         <div class="code-block">&lt;img src="assets/logo-circle-v4.svg" alt="Privé" width="120" height="120"&gt;</div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection__title">Color variations</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px;margin-top:16px">
+        <!-- Navy on white -->
+        <div style="background:#FFFFFF;border:1px solid var(--border);border-radius:8px;padding:24px 16px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px">
+          <img src="assets/logo-wordmark-v4.svg" alt="Navy on white" width="130" height="34" style="filter:invert(1)">
+          <span style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em">Navy on white</span>
+        </div>
+        <!-- White on pumpkin -->
+        <div style="background:#E87722;border-radius:8px;padding:24px 16px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px">
+          <img src="assets/logo-wordmark-v4.svg" alt="White on pumpkin" width="130" height="34">
+          <span style="font-size:11px;color:rgba(255,255,255,0.8);text-transform:uppercase;letter-spacing:0.05em">White on pumpkin</span>
+        </div>
+        <!-- Gold on navy — exclusivity -->
+        <div style="background:#192E49;border-radius:8px;padding:24px 16px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px">
+          <img src="assets/logo-wordmark-v4.svg" alt="Gold on navy" width="130" height="34" style="filter:brightness(0) invert(1) sepia(1) saturate(0.6) hue-rotate(350deg) brightness(0.82)">
+          <span style="font-size:11px;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:0.05em">Gold on navy</span>
+        </div>
+        <!-- All-white knockout -->
+        <div style="background:linear-gradient(135deg,#2a4a6b,#192E49);border-radius:8px;padding:24px 16px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;position:relative;overflow:hidden">
+          <div style="position:absolute;inset:0;opacity:0.15;background:url('assets/logo-circle-v4.svg') center/cover no-repeat"></div>
+          <img src="assets/logo-wordmark-v4.svg" alt="White knockout" width="130" height="34" style="position:relative">
+          <span style="font-size:11px;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:0.05em;position:relative">Photo overlay</span>
+        </div>
+        <!-- All-navy solid -->
+        <div style="background:#F5F0EB;border-radius:8px;padding:24px 16px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px">
+          <img src="assets/logo-wordmark-v4.svg" alt="Navy solid" width="130" height="34" style="filter:invert(1)">
+          <span style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em">Navy on light</span>
+        </div>
       </div>
     </div>
   </div>
