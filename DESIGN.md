@@ -229,6 +229,32 @@ Jost is geometric and sharp — it gives structure and authority. Barlow is roun
 - **Fonts:** Jost only (simplified)
 - **Feel:** Clean, efficient, hacker aesthetic
 
+## Logo
+
+### SVG Assets (in assets/)
+- `logo-wordmark-v4.svg` — **USE THIS FOR BANNERS.** viewBox: "340 790 1320 345" (tightly cropped to letterforms). Has built-in white fill + pumpkin #E87722 accent on É
+- `logo-wordmark-mono.svg` — Same viewBox, monochrome treatment (no accent)
+- `logo-I-centered-v4.svg` — Circle mark with centered PRIVÉ. viewBox: 2000×2000 square (for circle composition, not standalone wordmark)
+- `logo-circle-v4.svg` — Standard circle mark
+- `logo-circle-accent.svg` — Circle mark with accent treatment
+- `logo-letters-v4.svg` — **DO NOT USE FOR BANNERS.** viewBox is 2000×2000 square — letters are tiny in the canvas
+
+### Logo Treatments
+- **Style A (Monochrome):** All letterforms same color. Navy on white, or white on navy. Clean, unified
+- **Style B (Accent Highlight):** Letterforms in primary color (navy or white), É accent in pumpkin #E87722
+
+### Logo Sizing for Banners
+- **2000×980 desktop:** Wordmark at 700×184px (3.8:1 ratio from viewBox)
+- **750×735 mobile:** Wordmark at 260×68px (fits within mobile viewport)
+- **Header nav:** Wordmark at 140×37px
+- **Never exceed the viewport width** — a 400px logo doesn't fit in 375px
+
+### Logo Pitfalls
+- **Never use `logo-letters-v4.svg` for banner exports** — its 2000×2000 square viewBox makes the wordmark invisible when scaled
+- **Never apply CSS `filter: invert()` to the logo** — it inverts the pumpkin accent along with the letterforms, breaking the É
+- **Never add fake accent divs over the logo** — the SVG has a built-in #E87722 accent path
+- **Always maintain 3.8:1 aspect ratio** — derived from viewBox 1320×345. Don't squish
+
 ## Shapes
 
 Zero border radius on storefront. Every element — buttons, cards, inputs, badges, modals — uses sharp 90-degree corners. This is the editorial character: precise, intentional, no softening.
@@ -258,6 +284,49 @@ Zero border radius on storefront. Every element — buttons, cards, inputs, badg
 - "EXCLUSIVO": pumpkin (#E87722) bg, white text
 - "CLÁSICO": cream bg, dark text
 - Small caps Jost with wide tracking
+
+## Banners (Shopify & Marketing)
+
+### Dimensions
+- **Desktop:** 2000×980px (Shopify recommended)
+- **Mobile:** 750×735px (proportional)
+- **Format:** JPG at 92% quality (Shopify does not reliably support WebP for all placements)
+- **Max file size:** Under 200KB per banner
+
+### Typography Proportions (Critical)
+Banners are wide canvases — text must COMMAND the space. Luxury fragrance banners follow strict proportional rules:
+
+- **Headings must dominate 30-40% of vertical height.** For a 980px canvas, headings (including line-height) should occupy 300-400px
+- **Heading-to-subtext ratio: minimum 3:1.** If heading is 150px, subtext is 50px. If heading is 120px, subtext is 40px
+- **Subtext minimum: 28px on a 2000px wide banner.** Anything smaller is unreadable
+- **CTA bars: 80-90px height, 24-28px text**
+- **Text structure:** subheading (label) → heading (statement) → body copy (1-2 sentences)
+
+### Desktop Font Sizes (2000×980)
+- Main headings: 120-160px (varies by banner)
+- Subtext/descriptions: 36-48px
+- CTA text: 24-28px
+- Taglines: 36-42px
+- Navigation labels: 28-32px
+
+### Mobile Font Sizes (750×735)
+- Main headings: 48-72px
+- Subtext/descriptions: 24-32px
+- CTA text: 20-24px
+
+### Banner Copy Structure
+Every banner follows:
+1. **Subheading** — all-caps Jost, wide tracking, small: "FRAGANCIAS DE AUTOR · DESDE 2022"
+2. **Heading** — large Jost, the statement: "Lo que llevas dice más que tu nombre."
+3. **Body** — 1-2 sentences Barlow, mood-anchored, not catalogue copy
+
+### Banner Pitfalls
+- **Never use CSS `filter: invert()` on SVG logos** — it inverts accent colors too, breaking the pumpkin É
+- **Never use fake accent overlays** — if the SVG has a built-in accent path, use it, don't add a positioned div
+- **SVG viewBox must be cropped to the artwork** — never use a 2000×2000 square viewBox for a wordmark; use the tight viewBox (e.g., "340 790 1320 345")
+- **Never use `html2canvas` output for production** — it misses fonts and SVGs; use Playwright/headless browser for image exports
+- **Never design banners for 1920×600** — always use Shopify's 2000×980 recommendation
+- **Inline SVG paths break during regex/file operations** — use data URIs for exports, relative paths for live page
 
 ## Do's and Don'ts
 
