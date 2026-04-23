@@ -23,8 +23,8 @@
       --text: #2E2E2E;
       --muted: #6E6E6E;
       --white: #FFFFFF;
-      --banner-w: 1920px;
-      --banner-h: 600px;
+      --banner-w: 2000px;
+      --banner-h: 980px;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -154,7 +154,7 @@
     /* Banner container with aspect ratio */
     .banner-frame {
       width: 100%;
-      aspect-ratio: 1920 / 600;
+      aspect-ratio: 2000 / 980;
       overflow: hidden;
       position: relative;
       box-shadow: 0 4px 24px rgba(0,0,0,0.08);
@@ -181,7 +181,7 @@
     .mobile-frame {
       width: 375px;
       max-width: 100%;
-      aspect-ratio: 375 / 200;
+      aspect-ratio: 375 / 184;
       overflow: hidden;
       position: relative;
       box-shadow: 0 2px 12px rgba(0,0,0,0.06);
@@ -647,8 +647,8 @@
 
     .banner--exclusivos .glow {
       position: absolute;
-      width: 600px;
-      height: 600px;
+      width: 625px;
+      height: 625px;
       background: radial-gradient(circle, rgba(184,149,106,0.06) 0%, transparent 70%);
       top: 50%;
       left: 50%;
@@ -1015,7 +1015,7 @@
     <img src="assets/logo-wordmark-v4.svg" width="120" height="31" aria-label="Privé" style="filter: brightness(0) saturate(100%) invert(100%);">
   </div>
   <h1>Banners para Shopify</h1>
-  <p>7 banners premium — 1920 &times; 600px — listos para captura y subida a Shopify.</p>
+  <p>7 banners premium — 2000 &times; 980px — listos para captura y subida a Shopify.</p>
 </header>
 
 <!-- ═══════════════════════════════════════
@@ -1042,7 +1042,7 @@
 <div class="info-box">
   <div class="info-box-inner">
     <strong>Exportación automática de banners</strong><br>
-    1. Usa los botones "Desktop WebP" (1920×600px) y "Mobile WebP" (375×800px) para exportar banners individuales.<br>
+    1. Usa los botones "Desktop WebP" (2000×980px) y "Mobile WebP" (750×735px) para exportar banners individuales.<br>
     2. Usa "Descargar Todos los Banners" para exportar todos los banners de una vez.<br>
     3. Los archivos se exportan en formato WebP, calidad 92%, listos para Shopify.<br>
     4. Sube las imágenes a Shopify en <code>Online Store → Themes → Customize → Image banner</code>.<br>
@@ -1514,8 +1514,8 @@
 const bannerCss = {
   1: `/* Banner 1: Hero — Brand Statement */
 .banner--hero {
-  width: 1920px;
-  height: 600px;
+  width: 2000px;
+  height: 980px;
   background: #192E49;
   display: flex;
   flex-direction: column;
@@ -1542,8 +1542,8 @@ const bannerCss = {
 
   2: `/* Banner 2: Nuevos Ingresos */
 .banner--nuevos {
-  width: 1920px;
-  height: 600px;
+  width: 2000px;
+  height: 980px;
   display: flex;
   background: #F5F1EC;
   position: relative;
@@ -1582,8 +1582,8 @@ const bannerCss = {
 
   3: `/* Banner 3: Estuches y Sets */
 .banner--estuches {
-  width: 1920px;
-  height: 600px;
+  width: 2000px;
+  height: 980px;
   background: #F5F1EC;
   display: flex;
   flex-direction: column;
@@ -1617,8 +1617,8 @@ const bannerCss = {
 
   4: `/* Banner 4: Ofertas Especiales */
 .banner--ofertas {
-  width: 1920px;
-  height: 600px;
+  width: 2000px;
+  height: 980px;
   background: #192E49;
   display: flex;
   flex-direction: column;
@@ -1644,8 +1644,8 @@ const bannerCss = {
 
   5: `/* Banner 5: Para Él / Para Ella */
 .banner--genero {
-  width: 1920px;
-  height: 600px;
+  width: 2000px;
+  height: 980px;
   display: flex;
   position: relative;
 }
@@ -1681,8 +1681,8 @@ const bannerCss = {
 
   6: `/* Banner 6: Lo Más Vendido */
 .banner--vendido {
-  width: 1920px;
-  height: 600px;
+  width: 2000px;
+  height: 980px;
   background: #F5F1EC;
   display: flex;
   flex-direction: column;
@@ -1706,8 +1706,8 @@ const bannerCss = {
 
   7: `/* Banner 7: Edición Exclusiva (formerly 8) */
 .banner--exclusivos {
-  width: 1920px;
-  height: 600px;
+  width: 2000px;
+  height: 980px;
   background: linear-gradient(135deg, #0F1D30 0%, #192E49 40%, #1A3254 100%);
   display: flex;
   flex-direction: column;
@@ -1741,8 +1741,8 @@ const bannerCss = {
 
   9: `/* Banner 9: Día de la Madre — Split Layout */
 .banner--madre {
-  width: 1920px;
-  height: 600px;
+  width: 2000px;
+  height: 980px;
   display: flex;
   position: relative;
   overflow: hidden;
@@ -1807,8 +1807,8 @@ const bannerCss = {
 
   10: `/* Banner 10: San Valentín — Decorative Frame */
 .banner--valentin {
-  width: 1920px;
-  height: 600px;
+  width: 2000px;
+  height: 980px;
   background: linear-gradient(180deg, #0F1D30 0%, #192E49 100%);
   display: flex;
   flex-direction: column;
@@ -1865,8 +1865,8 @@ const bannerCss = {
 
   11: `/* Banner 11: Navidad — Gift Strip Layout */
 .banner--navidad {
-  width: 1920px;
-  height: 600px;
+  width: 2000px;
+  height: 980px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -1974,8 +1974,8 @@ async function downloadBanner(id, format) {
   const btn = event.target;
 
   // Determine dimensions
-  const width = isDesktop ? 1920 : 375;
-  const height = isDesktop ? 600 : 800;
+  const width = isDesktop ? 2000 : 750;
+  const height = isDesktop ? 980 : 735;
 
   btn.disabled = true;
   btn.textContent = 'Generando...';
@@ -1988,8 +1988,8 @@ async function downloadBanner(id, format) {
       useCORS: true,
       allowTaint: true,
       backgroundColor: '#FFFFFF', // Opaque background as required
-      windowWidth: isDesktop ? 1920 : 375,
-      windowHeight: isDesktop ? 600 : 800,
+      windowWidth: isDesktop ? 2000 : 750,
+      windowHeight: isDesktop ? 980 : 735,
       onclone: (doc) => {
         // Force the cloned frame to exact banner dimensions
         const clonedFrame = doc.querySelector(`#banner-${id} ${isDesktop ? '.banner-frame' : '.mobile-frame'}`);
@@ -2098,8 +2098,8 @@ async function downloadBannerSilent(id, format) {
   const frame = isDesktop ? section.querySelector('.banner-frame') : section.querySelector('.mobile-frame');
 
   // Determine dimensions
-  const width = isDesktop ? 1920 : 375;
-  const height = isDesktop ? 600 : 800;
+  const width = isDesktop ? 2000 : 750;
+  const height = isDesktop ? 980 : 735;
 
   const canvas = await html2canvas(frame, {
     width: width,
@@ -2108,8 +2108,8 @@ async function downloadBannerSilent(id, format) {
     useCORS: true,
     allowTaint: true,
     backgroundColor: '#FFFFFF',
-    windowWidth: isDesktop ? 1920 : 375,
-    windowHeight: isDesktop ? 600 : 800,
+    windowWidth: isDesktop ? 2000 : 750,
+    windowHeight: isDesktop ? 980 : 735,
     onclone: (doc) => {
       const clonedFrame = doc.querySelector(`#banner-${id} ${isDesktop ? '.banner-frame' : '.mobile-frame'}`);
       if (clonedFrame) {
