@@ -5,7 +5,7 @@
 # 3. Reports deploy-readiness
 #
 # This replaces both the old auto-merge and QA trigger workflows.
-# Install on: ALL priveperfumes/* repos (org-level default)
+# Install on: ALL prive-hn/* repos (org-level default)
 #
 # ORG-LEVEL SECRETS NEEDED:
 #   OPENAI_API_KEY — for QA agent API call
@@ -101,7 +101,7 @@ jobs:
           import json
           d = json.load(open('/tmp/pr.json'))
           for k in ['pr_number','head_sha','head_ref','title','hasCleanReview','hasQAPass','hasBlocking']:
-            print(f'{k}={d.get(k,\"\")}')  " >> $GITHUB_OUTPUT
+            print(f'{k}={str(d.get(k,\"\")).lower()}')  " >> $GITHUB_OUTPUT
 
       - name: Check CI status
         if: steps.info.outputs.skip != 'true'
