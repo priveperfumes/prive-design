@@ -1,0 +1,211 @@
+# 🔍 Agent Review — Trigger + Fallback Codex
+# When a PR is opened or receives a new commit:
+# 1. Calls the 🔍 Reviewer ChatGPT Agent via OpenAI API (fast path, ~2 min)
+# 2. Falls back to Codex review if API call fails
+#
+# Install on: ALL priveperfumes/* repos (org-level default)
+# New repos inherit automatically via org-level installation.
+#
+# ORG-LEVEL SECRETS NEEDED:
+#   OPENAI_API_KEY — for reviewer agent API call + Codex fallback
+
+name: Agent Review
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, ready_for_review]
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  review:
+    if: >
+      github.event.pull_request.draft == false &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.event.sender.type != 'Bot'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout PR merge ref
+        uses: actions/checkout@v5
+        with:
+          ref: refs/pull/${{ github.event.pull_request.number }}/merge
+          fetch-depth: 0
+
+      - name: Fetch base/head refs
+        run: |
+          git fetch --no-tags origin \
+            ${{ github.event.pull_request.base.ref }} \
+            +refs/pull/${{ github.event.pull_request.number }}/head
+
+      - name: Generate diff
+        id: diff
+        run: |
+          git diff ${{ github.event.pull_request.base.sha }}...${{ github.event.pull_request.head.sha }} > /tmp/pr-diff.txt
+          DIFF_LINES=$(wc -l < /tmp/pr-diff.txt)
+          echo "lines=$DIFF_LINES" >> $GITHUB_OUTPUT
+          # Truncate to 50KB for API call (most PRs fit easily)
+          head -c 50000 /tmp/pr-diff.txt > /tmp/pr-diff-truncated.txt
+          echo "Truncated diff to $(wc -c < /tmp/pr-diff-truncated.txt) bytes"
+
+      - name: Check for re-review
+        id: context
+        uses: actions/github-script@v7
+        with:
+          result-encoding: json
+          script: |
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              per_page: 100
+            });
+
+            const reviewComments = comments.filter(c => c.body.includes('🔍'));
+            const isReReview = reviewComments.length > 0;
+            const lastReviewSha = isReReview
+              ? (reviewComments[reviewComments.length - 1].body.match(/head: ([a-f0-9]+)/)?.[1] || '')
+              : '';
+            const round = reviewComments.length + 1;
+
+            return JSON.stringify({ isReReview, round, lastReviewSha });
+
+      - name: Call Reviewer Agent (OpenAI API)
+        id: agent_review
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          PR_NUMBER="${{ github.event.pull_request.number }}"
+          REPO="${{ github.repository }}"
+          PR_TITLE="${{ github.event.pull_request.title }}"
+          PR_BODY="${{ github.event.pull_request.body }}"
+          BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          HEAD_SHA="${{ github.event.pull_request.head.sha }}"
+          ROUND="${{ steps.context.outputs.round }}"
+
+          # Read the diff
+          DIFF=$(cat /tmp/pr-diff-truncated.txt | head -c 40000)
+
+          # Build the review prompt
+          cat > /tmp/review-prompt.json << 'PROMPT_EOF'
+          {
+            "model": "gpt-4o",
+            "messages": [
+              {
+                "role": "system",
+                "content": "You are a senior code reviewer. Respond with ONLY the review comment, no other text. Always prefix with 🔍."
+              },
+              {
+                "role": "user",
+                "content": "Review this PR diff.\n\nRepo: REPO_PLACEHOLDER\nPR #NUMBER_PLACEHOLDER: TITLE_PLACEHOLDER\nBase: BASE_PLACEHOLDER\nHead: HEAD_PLACEHOLDER\nRound: ROUND_PLACEHOLDER\n\nPR Description:\nBODY_PLACEHOLDER\n\nDiff:\nDIFF_PLACEHOLDER\n\nWrite a code review. Format:\n🔍 Code Review — Round N\n\n**Summary:** [assessment]\n\n**Critical Issues:** (must fix)\n- [ ] [issue with file:line]\n\n**Suggestions:** (nice to have)\n- [suggestion]\n\n**Positive:** [something done well]\n\n**Verdict:** ✅ Clean / ⚠️ Needs fixes / 🛑 Major issues\n\nKeep under 400 words. Be specific with file paths and line numbers."
+              }
+            ],
+            "max_tokens": 1000,
+            "temperature": 0.2
+          }
+          PROMPT_EOF
+
+          # Replace placeholders
+          python3 -c "
+          import json
+          with open('/tmp/review-prompt.json') as f:
+            data = json.load(f)
+          data['messages'][1]['content'] = data['messages'][1]['content'] \
+            .replace('REPO_PLACEHOLDER', '$REPO') \
+            .replace('NUMBER_PLACEHOLDER', '$PR_NUMBER') \
+            .replace('TITLE_PLACEHOLDER', '''$(echo "$PR_TITLE" | head -c 200)''') \
+            .replace('BASE_PLACEHOLDER', '$BASE_SHA') \
+            .replace('HEAD_PLACEHOLDER', '$HEAD_SHA') \
+            .replace('ROUND_PLACEHOLDER', '$ROUND') \
+            .replace('BODY_PLACEHOLDER', '''$(echo "$PR_BODY" | head -c 500)''') \
+            .replace('DIFF_PLACEHOLDER', '''$(cat /tmp/pr-diff-truncated.txt | head -c 30000)''')
+          with open('/tmp/review-prompt-final.json', 'w') as f:
+            json.dump(data, f)
+          "
+
+          # Call OpenAI
+          RESPONSE=$(curl -s https://api.openai.com/v1/chat/completions \
+            -H "Authorization: Bearer $OPENAI_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d @/tmp/review-prompt-final.json)
+
+          # Extract the review
+          REVIEW=$(echo "$RESPONSE" | python3 -c "
+          import json, sys
+          try:
+            d = json.load(sys.stdin)
+            print(d['choices'][0]['message']['content'])
+          except:
+            print('FAILED')
+          " 2>/dev/null || echo "FAILED")
+
+          if [ "$REVIEW" = "FAILED" ]; then
+            echo "agent_failed=true" >> $GITHUB_OUTPUT
+          else
+            echo "review<<EOF" >> $GITHUB_OUTPUT
+            echo "$REVIEW" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+            echo "agent_failed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Post agent review
+        if: steps.agent_review.outputs.agent_failed == 'false'
+        uses: actions/github-script@v7
+        env:
+          REVIEW: ${{ steps.agent_review.outputs.review }}
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              body: process.env.REVIEW,
+            });
+
+      # Fallback: Codex review if agent API failed
+      - name: Codex review fallback
+        if: steps.agent_review.outputs.agent_failed == 'true'
+        id: codex
+        uses: openai/codex-action@v1
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          model: gpt-5.3-codex
+          sandbox: read-only
+          prompt: |
+            You are 🔍 Reviewer for Privé Perfumes.
+
+            Review ONLY the changes in PR #${{ github.event.pull_request.number }} in ${{ github.repository }}.
+            Base: ${{ github.event.pull_request.base.sha }}
+            Head: ${{ github.event.pull_request.head.sha }}
+
+            Format:
+            🔍 Code Review
+
+            **Summary:** [assessment]
+            **Critical Issues:** (must fix)
+            - [ ] [issue with file:line]
+            **Suggestions:**
+            - [suggestion]
+            **Positive:** [something done well]
+            **Verdict:** ✅ Clean / ⚠️ Needs fixes / 🛑 Major issues
+
+            If no issues: "✅ Clean — no issues found"
+
+      - name: Post Codex fallback review
+        if: steps.agent_review.outputs.agent_failed == 'true' && steps.codex.outputs.final-message != ''
+        uses: actions/github-script@v7
+        env:
+          MSG: ${{ steps.codex.outputs.final-message }}
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              body: process.env.MSG,
+            });
